@@ -239,7 +239,7 @@ iframe {
   margin: 0 auto;
   margin-bottom: 72px;
   border-radius: 30px;
-  background: url(/img/hero_cover_chocolate.jpg) no-repeat;
+  background: url(../img/hero_cover_chocolate.jpg) no-repeat;
   background-position: center;
   background-size: cover;
   background-color: #fcf1e0;
