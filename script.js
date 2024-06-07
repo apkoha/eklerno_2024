@@ -1,12 +1,13 @@
-const buttonScrollDown = document.querySelector(".hero__button-scroll");
-const compoundBlock = document.getElementById("compound");
+const burger = document.querySelector(".burger");
+const navigation = document.querySelector(".header__nav");
 
-buttonScrollDown.addEventListener("click", (e) => {
-  compoundBlock.scrollIntoView({ behavior: "smooth" });
+burger.addEventListener("click", () => {
+  burger.classList.toggle("burger_active");
+  navigation.classList.toggle("header__nav_active");
 });
 
 //плавный скролл до блока с id совпадающим с data-attribute ссылки в навигации.
-//превентдефаулт позволяет оставить атрибут href для ссылок. Чтобы продожало работать выделение через tab
+//превентдефаулт позволяет оставить атрибут href для ссылок. Чтобы продолжало работать выделение через tab
 //и на случай отключения скрипта.
 const navLinks = document.querySelectorAll(".header__link, .footer__nav-link");
 
@@ -33,6 +34,13 @@ heroBuyButton.addEventListener("click", (e) => {
   productsBlock.scrollIntoView({ behavior: "smooth" });
 });
 
+const buttonScrollDown = document.querySelector(".hero__button-scroll");
+// const compoundBlock = document.getElementById("compound");
+
+buttonScrollDown.addEventListener("click", (e) => {
+  productsBlock.scrollIntoView({ behavior: "smooth" });
+});
+
 //переворот карточек компонентов
 const compoundCardsList = document.querySelector(".compound__list");
 const compoundCardItems = document.querySelectorAll(".compound__item");
@@ -50,12 +58,17 @@ compoundCardsList.addEventListener("click", ({ target }) => {
   }
 });
 
-//popup subscribe
+//закрытие popup subscribe и popup order
 const subscribeButton = document.querySelector(".subscribe__button");
 const subscribeCloseButton = document.querySelector(
   ".subscribe-popup__close-button"
 );
-const subscribePopup = document.querySelector(".subscribe-popup");
+const subscribePopup = document.querySelector(".subscribe__popup");
+
+const sellersButton = document.querySelector(".sellers__button ");
+const oderCloseButton = document.querySelector(".form__client_close-button");
+
+const cartPopup = document.querySelector(".cart__popup");
 
 subscribeButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -67,11 +80,25 @@ subscribeCloseButton.addEventListener("click", (e) => {
   subscribePopup.classList.remove("show__popup");
 });
 
+sellersButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  cartPopup.classList.add("show__popup");
+});
+
+oderCloseButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  cartPopup.classList.remove("show__popup");
+});
+
 window.addEventListener("keydown", (e) => {
   if (e.keyCode === 27) {
-    if (subscribePopup.classList.contains("show__popup")) {
+    if (
+      subscribePopup.classList.contains("show__popup") ||
+      cartPopup.classList.contains("show__popup")
+    ) {
       e.preventDefault();
       subscribePopup.classList.remove("show__popup");
+      cartPopup.classList.remove("show__popup");
     }
   }
 });
