@@ -1,11 +1,3 @@
-const burger = document.querySelector(".burger");
-const navigation = document.querySelector(".header__nav");
-
-burger.addEventListener("click", () => {
-  burger.classList.toggle("burger_active");
-  navigation.classList.toggle("header__nav_active");
-});
-
 //плавный скролл до блока с id совпадающим с data-attribute ссылки в навигации.
 //превентдефаулт позволяет оставить атрибут href для ссылок. Чтобы продолжало работать выделение через tab
 //и на случай отключения скрипта.
@@ -17,6 +9,7 @@ for (let i = 0; i < navLinks.length; i++) {
     document
       .getElementById(navLinks[i].getAttribute("data-link"))
       .scrollIntoView({ behavior: "smooth" });
+    navigation.classList.remove("header__nav_active");
   };
 }
 
@@ -35,7 +28,6 @@ heroBuyButton.addEventListener("click", (e) => {
 });
 
 const buttonScrollDown = document.querySelector(".hero__button-scroll");
-// const compoundBlock = document.getElementById("compound");
 
 buttonScrollDown.addEventListener("click", (e) => {
   productsBlock.scrollIntoView({ behavior: "smooth" });
@@ -58,7 +50,7 @@ compoundCardsList.addEventListener("click", ({ target }) => {
   }
 });
 
-//закрытие popup subscribe и popup order
+//закрытие popup subscribe, popup order, бургер навигации
 const subscribeButton = document.querySelector(".subscribe__button");
 const subscribeCloseButton = document.querySelector(
   ".subscribe-popup__close-button"
@@ -67,8 +59,22 @@ const subscribePopup = document.querySelector(".subscribe__popup");
 
 const sellersButton = document.querySelector(".sellers__button ");
 const oderCloseButton = document.querySelector(".form__client_close-button");
-
 const cartPopup = document.querySelector(".cart__popup");
+
+//открытие бургер навигации
+const burger = document.querySelector(".burger");
+const navigation = document.querySelector(".header__nav");
+const headerCloseButton = document.querySelector(".header__close-button");
+
+burger.addEventListener("click", () => {
+  headerCloseButton.classList.add("header__close-button--active");
+  navigation.classList.add("header__nav_active");
+});
+
+headerCloseButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  navigation.classList.remove("header__nav_active");
+});
 
 subscribeButton.addEventListener("click", (e) => {
   e.preventDefault();
@@ -94,31 +100,13 @@ window.addEventListener("keydown", (e) => {
   if (e.keyCode === 27) {
     if (
       subscribePopup.classList.contains("show__popup") ||
-      cartPopup.classList.contains("show__popup")
+      cartPopup.classList.contains("show__popup") ||
+      navigation.classList.contains("header__nav_active")
     ) {
       e.preventDefault();
       subscribePopup.classList.remove("show__popup");
       cartPopup.classList.remove("show__popup");
+      navigation.classList.remove("header__nav_active");
     }
   }
 });
-
-//включение кнопки "отправить" при заполнении input
-// const subscribeForm = document.querySelector(".subscribe__form");
-// const subscribeInput = document.querySelector(
-//   ".subscribe-popup__second-line input"
-// );
-// const subscribeSubmitButton = document.querySelector(
-//   ".subscribe-popup__button"
-// );
-// const subscribeEmail = subscribeInput.value;
-
-// subscribeForm.addEventListener("submit", (e) => {
-//   if (!subscribeEmail) {
-//     alert("Пожалуйста, введите email");
-//     return;
-//   } else {
-//     subscribeSubmitButton.disabled === false;
-//   }
-//   subscribeForm.submit();
-// });
