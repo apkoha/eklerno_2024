@@ -63,17 +63,17 @@ const cartPopup = document.querySelector(".cart__popup");
 
 //открытие бургер навигации
 const burger = document.querySelector(".burger");
-const navigation = document.querySelector(".header__nav");
+const headerNavigation = document.querySelector(".header__nav");
 const headerCloseButton = document.querySelector(".header__close-button");
 
 burger.addEventListener("click", () => {
   headerCloseButton.classList.add("header__close-button--active");
-  navigation.classList.add("header__nav_active");
+  headerNavigation.classList.add("header__nav_active");
 });
 
 headerCloseButton.addEventListener("click", (e) => {
   e.preventDefault();
-  navigation.classList.remove("header__nav_active");
+  headerNavigation.classList.remove("header__nav_active");
 });
 
 subscribeButton.addEventListener("click", (e) => {
@@ -101,12 +101,69 @@ window.addEventListener("keydown", (e) => {
     if (
       subscribePopup.classList.contains("show__popup") ||
       cartPopup.classList.contains("show__popup") ||
-      navigation.classList.contains("header__nav_active")
+      headerNavigation.classList.contains("header__nav_active")
     ) {
       e.preventDefault();
       subscribePopup.classList.remove("show__popup");
       cartPopup.classList.remove("show__popup");
-      navigation.classList.remove("header__nav_active");
+      headerNavigation.classList.remove("header__nav_active");
     }
   }
+});
+
+//слайдер https://swiperjs.com/element
+//https://youtu.be/ddbxsrGPRY0 - туториал
+
+const swiper = new Swiper(".products__slider", {
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  slidesPerView: 4,
+  spaceBetween: 18,
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+
+    610: {
+      slidesPerView: 2,
+    },
+
+    910: {
+      slidesPerView: 3,
+    },
+
+    1200: {
+      slidesPerView: 4,
+    },
+  },
+});
+
+//слайдер отзывов
+
+const swiperReview = new Swiper(".review__slider", {
+  pagination: {
+    el: ".swiper-pagination",
+    clickable: true,
+  },
+
+  slidesPerView: 3,
+  spaceBetween: 28,
+
+  breakpoints: {
+    320: {
+      slidesPerView: 1,
+    },
+
+    610: {
+      slidesPerView: 2,
+    },
+
+    910: {
+      slidesPerView: 3,
+    },
+  },
 });

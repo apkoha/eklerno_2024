@@ -9,8 +9,15 @@
 
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/style.css" />
+    <link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
 
-    <script src="script.js" defer></script>
+
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<script src="script.js" defer></script>
+
   </head>
   <body>
     <header class="header" id="main">
@@ -278,40 +285,114 @@
     <article class="products" id="products">
       <div class="container products__container">
         <h2 class="products__title">НАШИ <span class="decaration-orange">ЭКЛЕРЫ</span></h2>
-        <ul class="products__list">
-          <li class="products__item">
-            <img class="products__item-img" src="./img/orange-chocolate.jpg" alt="" width="270" height="230"/>
-            <h3 class="products__item-title">orange</h3>
-            <p class="products__item-text">Dark chocolate</p>
-            <div class="products__price">
-              <p class="products__price-text">45 ₽</p>
+        <div class="swiper products__slider">
+          <div class="swiper-wrapper">
+
+            <div class="swiper-slide">
+              <div class="products__item">
+                <img
+                  class="products__item-img"
+                  src="./img/five_eclairs_assorted.jpg"
+                  alt=""
+                  width="270"
+                  height="230"
+                />
+                <h3 class="products__item-title">orange</h3>
+                <p class="products__item-text">Dark chocolate</p>
+                <div class="products__price">
+                  <p class="products__price-text">1450 ₽</p>
+                </div>
+              </div>
             </div>
-          </li>
-          <li class="products__item">
-            <img class="products__item-img" src="./img/apple-chocolate.jpg" alt="" width="270" height="230"/>
-            <h3 class="products__item-title">orange</h3>
-            <p class="products__item-text">Dark chocolate</p>
-            <div class="products__price">
-              <p class="products__price-text">45 ₽</p>
+          
+            <div class="swiper-slide">
+              <div class="products__item">
+                <img
+                  class="products__item-img"
+                  src="./img/five_eclairs_box.jpg"
+                  alt=""
+                  width="270"
+                  height="230"
+                />
+                <h3 class="products__item-title">orange</h3>
+                <p class="products__item-text">Dark chocolate</p>
+                <div class="products__price">
+                  <p class="products__price-text">1480 ₽</p>
+                </div>
+              </div>
             </div>
-          </li>
-          <li class="products__item">
-            <img class="products__item-img" src="./img/lime-chocolate.jpg" alt="" width="270" height="230"/>
-            <h3 class="products__item-title">orange</h3>
-            <p class="products__item-text">Dark chocolate</p>
-            <div class="products__price">
-              <p class="products__price-text">45 ₽</p>
+          
+            <div class="swiper-slide">
+        <div class="products__item">
+          <img
+            class="products__item-img"
+            src="./img/three_eclairs_flowers.jpg"
+            alt=""
+            width="270"
+            height="230"
+          />
+          <h3 class="products__item-title">Инжир</h3>
+          <p class="products__item-text">Фруктовое ассорти</p>
+          <div class="products__price">
+            <p class="products__price-text">1050 ₽</p>
+          </div>
+        </div>
             </div>
-          </li>
-          <li class="products__item">
-            <img class="products__item-img" src="./img/pineapple-chocolate.jpg" alt="" width="270" height="230"/>
-            <h3 class="products__item-title">orange</h3>
-            <p class="products__item-text">Dark chocolate</p>
-            <div class="products__price">
-              <p class="products__price-text">45 ₽</p>
+          
+            <div class="swiper-slide">
+        <div class="products__item">
+          <img
+            class="products__item-img"
+            src="./img/raspberries_eclair.jpg"
+            alt=""
+            width="270"
+            height="230"
+          />
+          <h3 class="products__item-title">малина</h3>
+          <p class="products__item-text">Малина со сливками</p>
+          <div class="products__price">
+            <p class="products__price-text">380 ₽</p>
+          </div>
+        </div>
             </div>
-          </li>
-        </ul>
+          
+            <div class="swiper-slide">
+        <div class="products__item">
+          <img
+            class="products__item-img"
+            src="./img/strawberry_eclair.jpg"
+            alt=""
+            width="270"
+            height="230"
+          />
+          <h3 class="products__item-title">Клубника</h3>
+          <p class="products__item-text">Клубника со сливками</p>
+          <div class="products__price">
+            <p class="products__price-text">975 ₽</p>
+          </div>
+        </div>
+            </div>
+          
+            <div class="swiper-slide">
+        <div class="products__item">
+          <img
+            class="products__item-img"
+            src="./img/lime_eclairs.jpg"
+            alt=""
+            width="270"
+            height="230"
+          />
+          <h3 class="products__item-title">лайм</h3>
+          <p class="products__item-text">Лайм и шоколад</p>
+          <div class="products__price">
+            <p class="products__price-text">350 ₽</p>
+          </div>
+        </div>
+            </div>
+          </div>
+
+          <div class="swiper-pagination" id="swiper-pagination"></div>
+          </div>
       </div>
     </article>
 
@@ -345,9 +426,10 @@
     <section class="review" id="eclairs">
       <div class="review__container container">
         <h2 class="review__title"><span class="decaration-orange">эклеры</span> - это любовь</h2>
-        <div class="review__slider">
-          <ul class="review__slider-list">
-            <li class="review__slider-item">
+        <div class="swiper review__slider">
+          <div class="swiper-wrapper">
+            
+            <div class="swiper-slide">
               <div class="slider-item__container">
                 <img class="review__slider-img" src="./img/buyer-ginger-girl.png" alt="" width="80" height="80"/>
                 <h3 class="review__slider-title">Кристина Нежнина</h3>
@@ -356,8 +438,9 @@
                   wafer, covered in a thin layer chocolate.
                 </p>
               </div>
-            </li>
-            <li class="review__slider-item">
+            </div>
+
+            <div class="swiper-slide">
               <div class="slider-item__container">
               <img class="review__slider-img" src="./img/buyer-man.png" alt="" width="80" height="80"/>
               <h3 class="review__slider-title">Константин Губенков</h3>
@@ -365,19 +448,31 @@
                 This chocolate confection is a delight! A delight! The wafer is light and crisp, the hazelnut cream is smooth, and the chocolate is good.
               </p>
               </div>
-            </li>
-            <li class="review__slider-item">
+            </div>
+
+            <div class="swiper-slide">
               <div class="slider-item__container">
+                <img class="review__slider-img" src="./img/buyer-girl.png" alt="" width="80" height="80"/>
+                <h3 class="review__slider-title">Аврил Лавин</h3>
+                <p class="review__slider-text">
+                 Chocolate is a family favourite treat. Love the delicious smooth chocolate and the creaminess inside. The wafer is soft but crunchy.
+                </p>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+            <div class="slider-item__container">
               <img class="review__slider-img" src="./img/buyer-girl.png" alt="" width="80" height="80"/>
-              <h3 class="review__slider-title">Аврил Лавин</h3>
+              <h3 class="review__slider-title">Иван Демьян</h3>
               <p class="review__slider-text">
                  Chocolate is a family favourite treat. Love the delicious smooth chocolate and the creaminess inside. The wafer is soft but crunchy.
               </p>
             </div>
-            </li>
-          </ul>
+            </div>
+            </div>
+          <div class="swiper-pagination" id="swiper-pagination--review"></div>
         </div>
-        <a class="review__button button" href="https://www.vk.com/eclerno_dessert/" target="_blank">Оставить отзыв</a>
+      <a class="review__button button" href="https://www.vk.com/eclerno_dessert/" target="_blank">Оставить отзыв</a>
       </div>
     </section>
 
