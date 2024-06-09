@@ -151,19 +151,20 @@ const swiperReview = new Swiper(".review__slider", {
   },
 
   slidesPerView: 3,
-  spaceBetween: 28,
+  spaceBetween: 16,
 
   breakpoints: {
     320: {
       slidesPerView: 1,
     },
 
-    610: {
+    741: {
       slidesPerView: 2,
     },
 
-    910: {
+    1200: {
       slidesPerView: 3,
+      spaceBetween: 28,
     },
   },
 });
