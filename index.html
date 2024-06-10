@@ -10,13 +10,14 @@
     <link rel="stylesheet" href="./css/normalize.css" />
     <link rel="stylesheet" href="./css/index.css" />
     <link
-  rel="stylesheet"
-  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
-/>
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
 
-<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-<script src="script.js" defer></script>
-
+    <!-- <script src="./scripts/products.js" type="module"></script> -->
+    <script src="./scripts/main.js" type="module"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="./scripts/sliderInit.js" defer></script>
   </head>
   <body>
     <header class="header" id="main">
@@ -25,50 +26,144 @@
           <h1 class="logo__text">
             ЭКЛЕР<span class="decaration-orange">НО</span>
           </h1>
-          <img class="logo__img" src="./img/logo-icon.png" alt="иконка шоколадки" width="24" height="24"></img>
+          <img
+            class="logo__img"
+            src="./img/logo-icon.png"
+            alt="иконка шоколадки"
+            width="24"
+            height="24"
+          />
         </div>
-        
-          <nav class="header__nav">
-            <button type="button" class="header__close-button close__button">
-              <svg width="28" height="28" viewBox="0 0 28 28" fill="currenColor" xmlns="http://www.w3.org/2000/svg">
-                <path d="M21 7L7 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M7 7L21 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-              </svg>
-            </button>
-            <ul class="nav__list">
-              <li class="nav__list-item"><a href="index.html#main" class="header__link" data-link="main">Главная</a></li>
-              <li class="nav__list-item"><a href="index.html#how" class="header__link" data-link="how">Как это сделано?</a></li>
-              <li class="nav__list-item"><a href="index.html#products" class="header__link" data-link="products">Наши эклеры</a></li>
-              <li class="nav__list-item"><a href="index.html#top" class="header__link" data-link="top">Лидеры продаж</a></li>
-              <li class="nav__list-item"><a href="index.html#eclairs" class="header__link" data-link="eclairs">Эклеры - это любовь</a></li>
-            </ul>
+
+        <nav class="header__nav">
+          <button
+            type="button"
+            class="header__close-button close__button close__button--white"
+          >
+            <svg
+              width="20"
+              height="20"
+              viewBox="0 0 24 24"
+              fill="currentColor"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M20.6377 1.54594L1.54585 20.6378M1.54585 1.54594L20.6377 20.6378"
+                stroke="currentColor"
+                stroke-width="2"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              />
+            </svg>
+          </button>
+          <ul class="nav__list">
+            <li class="nav__list-item">
+              <a href="index.html#main" class="header__link" data-link="main"
+                >Главная</a
+              >
+            </li>
+            <li class="nav__list-item">
+              <a href="index.html#how" class="header__link" data-link="how"
+                >Как это сделано?</a
+              >
+            </li>
+            <li class="nav__list-item">
+              <a
+                href="index.html#products"
+                class="header__link"
+                data-link="products"
+                >Наши эклеры</a
+              >
+            </li>
+            <li class="nav__list-item">
+              <a
+                href="index.html#bestsellers"
+                class="header__link"
+                data-link="bestsellers"
+                >Лидеры продаж</a
+              >
+            </li>
+            <li class="nav__list-item">
+              <a
+                href="index.html#eclairs"
+                class="header__link"
+                data-link="eclairs"
+                >Эклеры - это любовь</a
+              >
+            </li>
+          </ul>
 
           <div class="header__social-links">
             <a
               class="header__social-link header__social-link-instagram"
-              alt=""
               href="https://www.instagram.com/eclerno_dessert/"
               target="_blank"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16 11.3701C16.1234 12.2023 15.9812 13.0523 15.5937 13.7991C15.2062 14.5459 14.5931 15.1515 13.8416 15.5297C13.0901 15.908 12.2384 16.0397 11.4077 15.906C10.5771 15.7723 9.80971 15.3801 9.21479 14.7852C8.61987 14.1903 8.22768 13.4229 8.09402 12.5923C7.96035 11.7616 8.09202 10.91 8.47028 10.1584C8.84854 9.40691 9.45414 8.7938 10.2009 8.4063C10.9477 8.0188 11.7977 7.87665 12.63 8.00006C13.4789 8.12594 14.2648 8.52152 14.8716 9.12836C15.4785 9.73521 15.8741 10.5211 16 11.3701Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M16 11.3701C16.1234 12.2023 15.9812 13.0523 15.5937 13.7991C15.2062 14.5459 14.5931 15.1515 13.8416 15.5297C13.0901 15.908 12.2384 16.0397 11.4077 15.906C10.5771 15.7723 9.80971 15.3801 9.21479 14.7852C8.61987 14.1903 8.22768 13.4229 8.09402 12.5923C7.96035 11.7616 8.09202 10.91 8.47028 10.1584C8.84854 9.40691 9.45414 8.7938 10.2009 8.4063C10.9477 8.0188 11.7977 7.87665 12.63 8.00006C13.4789 8.12594 14.2648 8.52152 14.8716 9.12836C15.4785 9.73521 15.8741 10.5211 16 11.3701Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M16 11.3701C16.1234 12.2023 15.9812 13.0523 15.5937 13.7991C15.2062 14.5459 14.5931 15.1515 13.8416 15.5297C13.0901 15.908 12.2384 16.0397 11.4077 15.906C10.5771 15.7723 9.80971 15.3801 9.21479 14.7852C8.61987 14.1903 8.22768 13.4229 8.09402 12.5923C7.96035 11.7616 8.09202 10.91 8.47028 10.1584C8.84854 9.40691 9.45414 8.7938 10.2009 8.4063C10.9477 8.0188 11.7977 7.87665 12.63 8.00006C13.4789 8.12594 14.2648 8.52152 14.8716 9.12836C15.4785 9.73521 15.8741 10.5211 16 11.3701Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M16 11.3701C16.1234 12.2023 15.9812 13.0523 15.5937 13.7991C15.2062 14.5459 14.5931 15.1515 13.8416 15.5297C13.0901 15.908 12.2384 16.0397 11.4077 15.906C10.5771 15.7723 9.80971 15.3801 9.21479 14.7852C8.61987 14.1903 8.22768 13.4229 8.09402 12.5923C7.96035 11.7616 8.09202 10.91 8.47028 10.1584C8.84854 9.40691 9.45414 8.7938 10.2009 8.4063C10.9477 8.0188 11.7977 7.87665 12.63 8.00006C13.4789 8.12594 14.2648 8.52152 14.8716 9.12836C15.4785 9.73521 15.8741 10.5211 16 11.3701Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M17.5 6.5H17.51"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M17.5 6.5H17.51"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </a>
             <a
               class="header__social-link header__social-link-vkontakte"
-              alt=""
               href="https://www.vk.com/eclerno_dessert/"
               target="_blank"
             >
-              <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 27 27" width="24" height="24"><path fill-rule="evenodd" d="M 21.269531 0 L 5.464844 0 C 2.660156 0 0 2.199219 0 5 L 0 20.8125 C 0 23.613281 2.660156 26 5.464844 26 L 21.273438 26 C 24.074219 26 26 23.613281 26 20.8125 L 26 5 C 26 2.199219 24.074219 0 21.269531 0 Z M 20.3125 15.007813 C 21.734375 16.328125 22.03125 16.972656 22.078125 17.050781 C 22.667969 18.03125 21.425781 18.105469 21.425781 18.105469 L 19.050781 18.140625 C 19.050781 18.140625 18.539063 18.242188 17.867188 17.777344 C 16.976563 17.171875 16.140625 15.585938 15.484375 15.789063 C 14.824219 16 14.84375 17.429688 14.84375 17.429688 C 14.84375 17.429688 14.847656 17.679688 14.699219 17.84375 C 14.535156 18.015625 14.214844 18 14.214844 18 L 13.148438 18 C 13.148438 18 10.800781 18.195313 8.734375 16.042969 C 6.480469 13.695313 4.492188 9.066406 4.492188 9.066406 C 4.492188 9.066406 4.378906 8.773438 4.5 8.625 C 4.640625 8.460938 5.023438 8.453125 5.023438 8.453125 L 7.566406 8.441406 C 7.566406 8.441406 7.804688 8.484375 7.976563 8.609375 C 8.117188 8.710938 8.199219 8.90625 8.199219 8.90625 C 8.199219 8.90625 8.609375 9.949219 9.152344 10.886719 C 10.214844 12.722656 10.710938 13.125 11.070313 12.929688 C 11.597656 12.640625 11.4375 10.335938 11.4375 10.335938 C 11.4375 10.335938 11.449219 9.496094 11.171875 9.121094 C 10.960938 8.835938 10.5625 8.75 10.382813 8.726563 C 10.238281 8.707031 10.476563 8.375 10.78125 8.226563 C 11.238281 8.003906 12.046875 7.988281 13 8 C 13.742188 8.007813 13.957031 8.054688 14.246094 8.125 C 15.125 8.335938 14.828125 9.152344 14.828125 11.113281 C 14.828125 11.742188 14.714844 12.625 15.167969 12.917969 C 15.363281 13.042969 15.839844 12.9375 17.027344 10.914063 C 17.59375 9.953125 18.015625 8.828125 18.015625 8.828125 C 18.015625 8.828125 18.109375 8.625 18.253906 8.539063 C 18.402344 8.453125 18.601563 8.480469 18.601563 8.480469 L 21.277344 8.460938 C 21.277344 8.460938 22.078125 8.367188 22.210938 8.730469 C 22.347656 9.109375 21.910156 10 20.816406 11.457031 C 19.019531 13.847656 18.820313 13.625 20.3125 15.007813 Z"/></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 27 27"
+                width="24"
+                height="24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M 21.269531 0 L 5.464844 0 C 2.660156 0 0 2.199219 0 5 L 0 20.8125 C 0 23.613281 2.660156 26 5.464844 26 L 21.273438 26 C 24.074219 26 26 23.613281 26 20.8125 L 26 5 C 26 2.199219 24.074219 0 21.269531 0 Z M 20.3125 15.007813 C 21.734375 16.328125 22.03125 16.972656 22.078125 17.050781 C 22.667969 18.03125 21.425781 18.105469 21.425781 18.105469 L 19.050781 18.140625 C 19.050781 18.140625 18.539063 18.242188 17.867188 17.777344 C 16.976563 17.171875 16.140625 15.585938 15.484375 15.789063 C 14.824219 16 14.84375 17.429688 14.84375 17.429688 C 14.84375 17.429688 14.847656 17.679688 14.699219 17.84375 C 14.535156 18.015625 14.214844 18 14.214844 18 L 13.148438 18 C 13.148438 18 10.800781 18.195313 8.734375 16.042969 C 6.480469 13.695313 4.492188 9.066406 4.492188 9.066406 C 4.492188 9.066406 4.378906 8.773438 4.5 8.625 C 4.640625 8.460938 5.023438 8.453125 5.023438 8.453125 L 7.566406 8.441406 C 7.566406 8.441406 7.804688 8.484375 7.976563 8.609375 C 8.117188 8.710938 8.199219 8.90625 8.199219 8.90625 C 8.199219 8.90625 8.609375 9.949219 9.152344 10.886719 C 10.214844 12.722656 10.710938 13.125 11.070313 12.929688 C 11.597656 12.640625 11.4375 10.335938 11.4375 10.335938 C 11.4375 10.335938 11.449219 9.496094 11.171875 9.121094 C 10.960938 8.835938 10.5625 8.75 10.382813 8.726563 C 10.238281 8.707031 10.476563 8.375 10.78125 8.226563 C 11.238281 8.003906 12.046875 7.988281 13 8 C 13.742188 8.007813 13.957031 8.054688 14.246094 8.125 C 15.125 8.335938 14.828125 9.152344 14.828125 11.113281 C 14.828125 11.742188 14.714844 12.625 15.167969 12.917969 C 15.363281 13.042969 15.839844 12.9375 17.027344 10.914063 C 17.59375 9.953125 18.015625 8.828125 18.015625 8.828125 C 18.015625 8.828125 18.109375 8.625 18.253906 8.539063 C 18.402344 8.453125 18.601563 8.480469 18.601563 8.480469 L 21.277344 8.460938 C 21.277344 8.460938 22.078125 8.367188 22.210938 8.730469 C 22.347656 9.109375 21.910156 10 20.816406 11.457031 C 19.019531 13.847656 18.820313 13.625 20.3125 15.007813 Z"
+                />
+              </svg>
             </a>
           </div>
-          </nav>
-        
+        </nav>
+
         <button class="burger header__burger button">
           <span class="burger__line"></span>
         </button>
@@ -86,7 +181,7 @@
             <button class="hero__button hero__button-buy button--orange button">
               Купить
             </button>
-            <button class="hero__button hero__button-how button" >
+            <button class="hero__button hero__button-how button">
               Как это сделано?
             </button>
           </div>
@@ -182,48 +277,125 @@
         </p>
 
         <ul class="compound__list">
-          <li class="compound__item compound__item--top-side" data-compound="chocolate">
-            <img class="compound__item-img" src="./img/chocolate-img.png" alt="изображение шоколадной плитки" width="206" height="160" />
+          <li
+            class="compound__item compound__item--top-side"
+            data-compound="chocolate"
+          >
+            <img
+              class="compound__item-img"
+              src="./img/chocolate-img.png"
+              alt="изображение шоколадной плитки"
+              width="206"
+              height="160"
+            />
             <p class="compound__item-text">молочный шоколад</p>
           </li>
 
-          <li class="compound__item compound__item--second-side visually-hidden" id="chocolate">
+          <li
+            class="compound__item compound__item--second-side visually-hidden"
+            id="chocolate"
+          >
             <h3 class="compound__item-title">молочный шоколад</h3>
-            <button class="button compound__item-button button--orange">шоколад</button>
-            <p class="compound__item-card-text">Milk chocolate is a solid chocolate confectionery containing cocoa, sugar and milk. It is the most consumed type of chocolate. Chocolate was originally sold and consumed as a beverage in pre-Columbian times. Although four-fifths of all milk chocolate is sold in the United States and Europe.</p>
+            <button class="button compound__item-button button--orange">
+              шоколад
+            </button>
+            <p class="compound__item-card-text">
+              Milk chocolate is a solid chocolate confectionery containing
+              cocoa, sugar and milk. It is the most consumed type of chocolate.
+              Chocolate was originally sold and consumed as a beverage in
+              pre-Columbian times. Although four-fifths of all milk chocolate is
+              sold in the United States and Europe.
+            </p>
           </li>
 
-          <li class="compound__item compound__item--top-side" data-compound="milk">
-            <img class="compound__item-img" src="./img/milk-img.png" alt="изображение бутылки молока" width="206" height="160" />
+          <li
+            class="compound__item compound__item--top-side"
+            data-compound="milk"
+          >
+            <img
+              class="compound__item-img"
+              src="./img/milk-img.png"
+              alt="изображение бутылки молока"
+              width="206"
+              height="160"
+            />
             <p class="compound__item-text">молоко</p>
           </li>
 
-          <li class="compound__item compound__item--second-side visually-hidden" id="milk">
+          <li
+            class="compound__item compound__item--second-side visually-hidden"
+            id="milk"
+          >
             <h3 class="compound__item-title">молоко</h3>
-            <button class="button compound__item-button button--orange">молоко</button>
-            <p class="compound__item-card-text">Milk is a white liquid food produced by the mammary glands of mammals. It is the primary source of nutrition for young mammals (including breastfed human infants) before they are able to digest solid food.Early-lactation milk, which is called colostrum</p>
+            <button class="button compound__item-button button--orange">
+              молоко
+            </button>
+            <p class="compound__item-card-text">
+              Milk is a white liquid food produced by the mammary glands of
+              mammals. It is the primary source of nutrition for young mammals
+              (including breastfed human infants) before they are able to digest
+              solid food.Early-lactation milk, which is called colostrum
+            </p>
           </li>
 
-          <li class="compound__item compound__item--top-side" data-compound="nuts">
-            <img class="compound__item-img" src="./img/nuts-img.png" alt="изображение цельных лесных орехов" width="206" height="160" />
+          <li
+            class="compound__item compound__item--top-side"
+            data-compound="nuts"
+          >
+            <img
+              class="compound__item-img"
+              src="./img/nuts-img.png"
+              alt="изображение цельных лесных орехов"
+              width="206"
+              height="160"
+            />
             <p class="compound__item-text">орехи</p>
           </li>
 
-                    <li class="compound__item compound__item--second-side visually-hidden" id="nuts">
+          <li
+            class="compound__item compound__item--second-side visually-hidden"
+            id="nuts"
+          >
             <h3 class="compound__item-title">орехи</h3>
-            <button class="button compound__item-button button--orange">орехи</button>
-            <p class="compound__item-card-text">Almonds, pistachios, and walnuts are some types of nuts that contain healthy nutrients. When eaten as part of a nutrient-dense diet, these 9 nuts may offer benefits such as reducing your risk of heart disease. They’re a good source of fiber, healthy fats, and plant protein.</p>
+            <button class="button compound__item-button button--orange">
+              орехи
+            </button>
+            <p class="compound__item-card-text">
+              Almonds, pistachios, and walnuts are some types of nuts that
+              contain healthy nutrients. When eaten as part of a nutrient-dense
+              diet, these 9 nuts may offer benefits such as reducing your risk
+              of heart disease. They’re a good source of fiber, healthy fats,
+              and plant protein.
+            </p>
           </li>
 
-          <li class="compound__item compound__item--top-side" data-compound="cacao">
-            <img class="compound__item-img" src="./img/coffe-img.png" alt="изображение зёрен какао" width="206" height="160" />
+          <li
+            class="compound__item compound__item--top-side"
+            data-compound="cacao"
+          >
+            <img
+              class="compound__item-img"
+              src="./img/coffe-img.png"
+              alt="изображение зёрен какао"
+              width="206"
+              height="160"
+            />
             <p class="compound__item-text">ПОЛУСЛАДКИЙ ШОКОЛАД</p>
           </li>
 
-                    <li class="compound__item compound__item--second-side visually-hidden" id="cacao">
+          <li
+            class="compound__item compound__item--second-side visually-hidden"
+            id="cacao"
+          >
             <h3 class="compound__item-title">ПОЛУСЛАДКИЙ ШОКОЛАД</h3>
-            <button class="button compound__item-button button--orange">СЛАДКИЙ ШОКОЛАД</button>
-            <p class="compound__item-card-text">Semi-sweet chocolate has a cocoa solid content of 35 to 65%. One of the best ways to gain an understanding of this type of chocolate is to compare it to a different type of chocolate.</p>
+            <button class="button compound__item-button button--orange">
+              СЛАДКИЙ ШОКОЛАД
+            </button>
+            <p class="compound__item-card-text">
+              Semi-sweet chocolate has a cocoa solid content of 35 to 65%. One
+              of the best ways to gain an understanding of this type of
+              chocolate is to compare it to a different type of chocolate.
+            </p>
           </li>
         </ul>
       </div>
@@ -231,12 +403,25 @@
 
     <section class="made" id="how">
       <div class="container made__container">
-        <h2 class="made__title">КАК ЭТО <span class="decaration-orange">СДЕЛАНО?</span></h2>
+        <h2 class="made__title">
+          КАК ЭТО <span class="decaration-orange">СДЕЛАНО?</span>
+        </h2>
         <div class="made__block">
-          <a class="made__block-link" href="https://youtube.com/shorts/ccTPBie84x8" target="_blank">
-            <svg id="play__btn" width="44" height="44" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 33V12L35 22.5L15 33Z" fill="#F5F4F4"/>
-              <circle cx="22" cy="22" r="21.5" stroke="white"/>
+          <a
+            class="made__block-link"
+            href="https://youtube.com/shorts/ccTPBie84x8"
+            target="_blank"
+          >
+            <svg
+              id="play__btn"
+              width="44"
+              height="44"
+              viewBox="0 0 44 44"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path d="M15 33V12L35 22.5L15 33Z" fill="#F5F4F4" />
+              <circle cx="22" cy="22" r="21.5" stroke="white" />
             </svg>
           </a>
 
@@ -259,20 +444,18 @@
               </li>
               <li class="made__block-right_item">
                 <p>
-                  "Mix" the milk mixture and already liquid butter. Mix thoroughly
-                  with a silicone spatula so that the mass becomes uniform and
-                  silky.
+                  "Mix" the milk mixture and already liquid butter. Mix
+                  thoroughly with a silicone spatula so that the mass becomes
+                  uniform and silky.
                 </p>
               </li>
               <li class="made__block-right_item">
-                <p>
-                  Heat the mixture over low heat, letting it barely boil.
-                </p>
+                <p>Heat the mixture over low heat, letting it barely boil.</p>
               </li>
               <li class="made__block-right_item">
                 <p>
-                  Pour the chocolate into special containers (can be replaced with
-                  ice molds). Allow to cool and harden.
+                  Pour the chocolate into special containers (can be replaced
+                  with ice molds). Allow to cool and harden.
                 </p>
               </li>
             </ul>
@@ -283,192 +466,88 @@
 
     <article class="products" id="products">
       <div class="container products__container">
-        <h2 class="products__title">НАШИ <span class="decaration-orange">ЭКЛЕРЫ</span></h2>
+        <h2 class="products__title">
+          НАШИ <span class="decaration-orange">ЭКЛЕРЫ</span>
+        </h2>
+        <!-- элементы слайдера https://swiperjs.com/element -->
         <div class="swiper products__slider">
           <div class="swiper-wrapper">
-
-            <div class="swiper-slide">
-              <div class="products__item">
-                <img
-                  class="products__item-img"
-                  src="./img/five_eclairs_assorted.jpg"
-                  alt=""
-                  width="270"
-                  height="230"
-                />
-                <h3 class="products__item-title">orange</h3>
-                <p class="products__item-text">Dark chocolate</p>
-                <div class="products__price">
-                  <p class="products__price-text">1450 ₽</p>
-                </div>
-              </div>
-            </div>
-          
-            <div class="swiper-slide">
-              <div class="products__item">
-                <img
-                  class="products__item-img"
-                  src="./img/five_eclairs_box.jpg"
-                  alt=""
-                  width="270"
-                  height="230"
-                />
-                <h3 class="products__item-title">orange</h3>
-                <p class="products__item-text">Dark chocolate</p>
-                <div class="products__price">
-                  <p class="products__price-text">1480 ₽</p>
-                </div>
-              </div>
-            </div>
-          
-            <div class="swiper-slide">
-        <div class="products__item">
-          <img
-            class="products__item-img"
-            src="./img/three_eclairs_flowers.jpg"
-            alt=""
-            width="270"
-            height="230"
-          />
-          <h3 class="products__item-title">Инжир</h3>
-          <p class="products__item-text">Фруктовое ассорти</p>
-          <div class="products__price">
-            <p class="products__price-text">1050 ₽</p>
+            <!-- отрисовка карточек слайдера products.js -->
           </div>
         </div>
-            </div>
-          
-            <div class="swiper-slide">
-        <div class="products__item">
-          <img
-            class="products__item-img"
-            src="./img/raspberries_eclair.jpg"
-            alt=""
-            width="270"
-            height="230"
-          />
-          <h3 class="products__item-title">малина</h3>
-          <p class="products__item-text">Малина со сливками</p>
-          <div class="products__price">
-            <p class="products__price-text">380 ₽</p>
-          </div>
-        </div>
-            </div>
-          
-            <div class="swiper-slide">
-        <div class="products__item">
-          <img
-            class="products__item-img"
-            src="./img/strawberry_eclair.jpg"
-            alt=""
-            width="270"
-            height="230"
-          />
-          <h3 class="products__item-title">Клубника</h3>
-          <p class="products__item-text">Клубника со сливками</p>
-          <div class="products__price">
-            <p class="products__price-text">975 ₽</p>
-          </div>
-        </div>
-            </div>
-          
-            <div class="swiper-slide">
-        <div class="products__item">
-          <img
-            class="products__item-img"
-            src="./img/lime_eclairs.jpg"
-            alt=""
-            width="270"
-            height="230"
-          />
-          <h3 class="products__item-title">лайм</h3>
-          <p class="products__item-text">Лайм и шоколад</p>
-          <div class="products__price">
-            <p class="products__price-text">350 ₽</p>
-          </div>
-        </div>
-            </div>
-          </div>
-
-          <div class="swiper-pagination" id="swiper-pagination"></div>
-          </div>
       </div>
     </article>
 
-    <section class="sellers" id="top">
+    <section class="bestsellers" id="bestsellers">
       <div class="container">
-        <h2 class="sellers__title"><span class="decaration-orange">ЛИДЕРЫ</span> ПРОДАЖ</h2>
-        <div class="sellers__list__container">
-          <ul class="sellers__list">
-            <li class="sellers__item">
-              <img class="sellers__item-img" src="./img/nuts-cover.jpg" alt="" width="368" height="464"/>
-            </li>
-            <li class="sellers__item">
-              <img class="sellers__item-img" src="./img/nuts-chocolate-cover.jpg" alt="" width="368" height="464"/>
-            </li>
-            <li class="sellers__item">
-              <img class="sellers__item-img" src="./img/dark-chocolate-cover.jpg" alt="" width="368" height="464"/>
-            </li>
-          </ul>
-          <div class="sellers__info">
-            <p class="sellers__text">
+        <h2 class="bestsellers__title">
+          <span class="decaration-orange">ЛИДЕРЫ</span> ПРОДАЖ
+        </h2>
+        <div class="bestsellers__list__container">
+          <!-- отрисовка изображений эклеров "бестселлеров" bestsellers.js -->
+          <div class="bestsellers__info">
+            <p class="bestsellers__text">
               Crazy enough chocolate originates from a bean just like the coffee
-              bean called Cacao. Cacao has been around for thousands of years and
-              was first discovered by the Native American tribe called the Mayans.
+              bean called Cacao. Cacao has been around for thousands of years
+              and was first discovered by the Native American tribe called the
+              Mayans.
             </p>
-            <a class="sellers__button button--orange button" href="order.html">Купить</a>
+            <a
+              class="bestsellers__button button--orange button"
+              href="order.html"
+              >Купить</a
+            >
           </div>
         </div>
-        </div>
+      </div>
     </section>
 
     <section class="review" id="eclairs">
       <div class="review__container container">
-        <h2 class="review__title"><span class="decaration-orange">эклеры</span> - это любовь</h2>
+        <h2 class="review__title">
+          <span class="decaration-orange">эклеры</span> - это любовь
+        </h2>
         <div class="swiper review__slider">
           <div class="swiper-wrapper">
-            
             <div class="swiper-slide">
               <div class="slider-item__container">
                 <div class="review__img-container">
-                  <img class="review__slider-img" src="./img/buyer-ginger-girl.png" alt="" width="80" height="80"/>
+                  <img
+                    class="review__slider-img"
+                    src="./img/buyer-ginger-girl.png"
+                    alt=""
+                    width="80"
+                    height="80"
+                  />
                 </div>
                 <div class="review__info-container">
                   <h3 class="review__slider-title">Кристина Нежнина</h3>
                   <p class="review__slider-text">
-                    I love this chocolate bar. Perfect combination of light crispy
-                    wafer, covered in a thin layer chocolate.
+                    I love this chocolate bar. Perfect combination of light
+                    crispy wafer, covered in a thin layer chocolate.
                   </p>
                 </div>
               </div>
             </div>
 
-                        <div class="swiper-slide">
-            <div class="slider-item__container">
-              <div class="review__img-container">
-                <img class="review__slider-img" src="./img/buyer-man.png" alt="" width="80" height="80"/>
-              </div>
-              <div class="review__info-container">
-                <h3 class="review__slider-title">Иван Демьян</h3>
-                <p class="review__slider-text">
-                  Chocolate is a family favourite treat. Love the delicious smooth chocolate and the creaminess inside. The wafer is soft but crunchy.
-               </p>
-              </div>
-            </div>
-            </div>
-
-            
-
             <div class="swiper-slide">
               <div class="slider-item__container">
                 <div class="review__img-container">
-                  <img class="review__slider-img" src="./img/buyer-girl.png" alt="" width="80" height="80"/>
+                  <img
+                    class="review__slider-img"
+                    src="./img/buyer-man.png"
+                    alt=""
+                    width="80"
+                    height="80"
+                  />
                 </div>
                 <div class="review__info-container">
-                  <h3 class="review__slider-title">Аврил Лавин</h3>
+                  <h3 class="review__slider-title">Иван Демьян</h3>
                   <p class="review__slider-text">
-                    Chocolate is a family favourite treat. Love the delicious smooth chocolate and the creaminess inside. The wafer is soft but crunchy.
-                   </p>
+                    Chocolate is a family favourite treat. Love the delicious
+                    smooth chocolate and the creaminess inside. The wafer is
+                    soft but crunchy.
+                  </p>
                 </div>
               </div>
             </div>
@@ -476,12 +555,42 @@
             <div class="swiper-slide">
               <div class="slider-item__container">
                 <div class="review__img-container">
-                  <img class="review__slider-img" src="./img/young-blood.jpg" alt="" width="80" height="80"/>
+                  <img
+                    class="review__slider-img"
+                    src="./img/buyer-girl.png"
+                    alt=""
+                    width="80"
+                    height="80"
+                  />
+                </div>
+                <div class="review__info-container">
+                  <h3 class="review__slider-title">Ульяна Лавинова</h3>
+                  <p class="review__slider-text">
+                    Chocolate is a family favourite treat. Love the delicious
+                    smooth chocolate and the creaminess inside. The wafer is
+                    soft but crunchy.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div class="swiper-slide">
+              <div class="slider-item__container">
+                <div class="review__img-container">
+                  <img
+                    class="review__slider-img"
+                    src="./img/young-blood.jpg"
+                    alt=""
+                    width="80"
+                    height="80"
+                  />
                 </div>
                 <div class="review__info-container">
                   <h3 class="review__slider-title">Константин Губенков</h3>
                   <p class="review__slider-text">
-                    This chocolate confection is a delight! A delight! The wafer is light and crisp, the hazelnut cream is smooth, and the chocolate is good.
+                    This chocolate confection is a delight! A delight! The wafer
+                    is light and crisp, the hazelnut cream is smooth, and the
+                    chocolate is good.
                   </p>
                 </div>
               </div>
@@ -489,20 +598,27 @@
           </div>
           <div class="swiper-pagination" id="swiper-pagination--review"></div>
         </div>
-      <a class="review__button button" href="https://www.vk.com/eclerno_dessert/" target="_blank">Оставить отзыв</a>
+        <a
+          class="review__button button"
+          href="https://www.vk.com/eclerno_dessert/"
+          target="_blank"
+          >Оставить отзыв</a
+        >
       </div>
     </section>
 
     <section class="subscribe">
       <div class="container subscribe__container">
-        <h3 class="subscribe__title">попробуй новые<br>эклеры первым</h3>
+        <h3 class="subscribe__title">попробуй новые<br />эклеры первым</h3>
         <p class="subscribe__text">
           From the velvety texture to the rich and complex flavor, our New
           Chocolate is a true indulgence that will leave you craving more. Made
           with only the finest ingredients and handcrafted with the utmost care,
           each piece is a work of art that is sure to please.
         </p>
-        <button class="subscribe__button button--orange button">Подписаться</button>
+        <button class="subscribe__button button--orange button">
+          Подписаться
+        </button>
       </div>
     </section>
 
@@ -511,14 +627,16 @@
         <div class="footer__top-line">
           <h3 class="footer__top-line-title">
             <span class="decaration-orange">Эклер</span>
-            превосходное<br>лекарство от&nbsp;плохого&nbsp;дня
+            превосходное<br />лекарство от&nbsp;плохого&nbsp;дня
           </h3>
           <div class="footer__contacts">
             <p class="footer__contacts-text">Контакты</p>
             <a class="footer__contacts-tel" href="tel:+79204439426"
               >+7 (920) 443-94-26</a
             >
-            <a class="footer__contacts-email" href="mailto:amarant2202@gmail.com"
+            <a
+              class="footer__contacts-email"
+              href="mailto:amarant2202@gmail.com"
               >akirakurosawa67@gmail.com</a
             >
           </div>
@@ -528,12 +646,48 @@
               href="https://www.instagram.com/eclerno_dessert/"
               target="_blank"
             >
-              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-               <path d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-               <path d="M16 11.3701C16.1234 12.2023 15.9812 13.0523 15.5937 13.7991C15.2062 14.5459 14.5931 15.1515 13.8416 15.5297C13.0901 15.908 12.2384 16.0397 11.4077 15.906C10.5771 15.7723 9.80971 15.3801 9.21479 14.7852C8.61987 14.1903 8.22768 13.4229 8.09402 12.5923C7.96035 11.7616 8.09202 10.91 8.47028 10.1584C8.84854 9.40691 9.45414 8.7938 10.2009 8.4063C10.9477 8.0188 11.7977 7.87665 12.63 8.00006C13.4789 8.12594 14.2648 8.52152 14.8716 9.12836C15.4785 9.73521 15.8741 10.5211 16 11.3701Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-               <path d="M16 11.3701C16.1234 12.2023 15.9812 13.0523 15.5937 13.7991C15.2062 14.5459 14.5931 15.1515 13.8416 15.5297C13.0901 15.908 12.2384 16.0397 11.4077 15.906C10.5771 15.7723 9.80971 15.3801 9.21479 14.7852C8.61987 14.1903 8.22768 13.4229 8.09402 12.5923C7.96035 11.7616 8.09202 10.91 8.47028 10.1584C8.84854 9.40691 9.45414 8.7938 10.2009 8.4063C10.9477 8.0188 11.7977 7.87665 12.63 8.00006C13.4789 8.12594 14.2648 8.52152 14.8716 9.12836C15.4785 9.73521 15.8741 10.5211 16 11.3701Z" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-                <path d="M17.5 6.5H17.51" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              <svg
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M17 2H7C4.23858 2 2 4.23858 2 7V17C2 19.7614 4.23858 22 7 22H17C19.7614 22 22 19.7614 22 17V7C22 4.23858 19.7614 2 17 2Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M16 11.3701C16.1234 12.2023 15.9812 13.0523 15.5937 13.7991C15.2062 14.5459 14.5931 15.1515 13.8416 15.5297C13.0901 15.908 12.2384 16.0397 11.4077 15.906C10.5771 15.7723 9.80971 15.3801 9.21479 14.7852C8.61987 14.1903 8.22768 13.4229 8.09402 12.5923C7.96035 11.7616 8.09202 10.91 8.47028 10.1584C8.84854 9.40691 9.45414 8.7938 10.2009 8.4063C10.9477 8.0188 11.7977 7.87665 12.63 8.00006C13.4789 8.12594 14.2648 8.52152 14.8716 9.12836C15.4785 9.73521 15.8741 10.5211 16 11.3701Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M16 11.3701C16.1234 12.2023 15.9812 13.0523 15.5937 13.7991C15.2062 14.5459 14.5931 15.1515 13.8416 15.5297C13.0901 15.908 12.2384 16.0397 11.4077 15.906C10.5771 15.7723 9.80971 15.3801 9.21479 14.7852C8.61987 14.1903 8.22768 13.4229 8.09402 12.5923C7.96035 11.7616 8.09202 10.91 8.47028 10.1584C8.84854 9.40691 9.45414 8.7938 10.2009 8.4063C10.9477 8.0188 11.7977 7.87665 12.63 8.00006C13.4789 8.12594 14.2648 8.52152 14.8716 9.12836C15.4785 9.73521 15.8741 10.5211 16 11.3701Z"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M17.5 6.5H17.51"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M17.5 6.5H17.51"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
               </svg>
             </a>
             <a
@@ -541,30 +695,63 @@
               href="https://www.vk.com/eclerno_dessert/"
               target="_blank"
             >
-            <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 27 27" width="24" height="24"><path fill-rule="evenodd" d="M 21.269531 0 L 5.464844 0 C 2.660156 0 0 2.199219 0 5 L 0 20.8125 C 0 23.613281 2.660156 26 5.464844 26 L 21.273438 26 C 24.074219 26 26 23.613281 26 20.8125 L 26 5 C 26 2.199219 24.074219 0 21.269531 0 Z M 20.3125 15.007813 C 21.734375 16.328125 22.03125 16.972656 22.078125 17.050781 C 22.667969 18.03125 21.425781 18.105469 21.425781 18.105469 L 19.050781 18.140625 C 19.050781 18.140625 18.539063 18.242188 17.867188 17.777344 C 16.976563 17.171875 16.140625 15.585938 15.484375 15.789063 C 14.824219 16 14.84375 17.429688 14.84375 17.429688 C 14.84375 17.429688 14.847656 17.679688 14.699219 17.84375 C 14.535156 18.015625 14.214844 18 14.214844 18 L 13.148438 18 C 13.148438 18 10.800781 18.195313 8.734375 16.042969 C 6.480469 13.695313 4.492188 9.066406 4.492188 9.066406 C 4.492188 9.066406 4.378906 8.773438 4.5 8.625 C 4.640625 8.460938 5.023438 8.453125 5.023438 8.453125 L 7.566406 8.441406 C 7.566406 8.441406 7.804688 8.484375 7.976563 8.609375 C 8.117188 8.710938 8.199219 8.90625 8.199219 8.90625 C 8.199219 8.90625 8.609375 9.949219 9.152344 10.886719 C 10.214844 12.722656 10.710938 13.125 11.070313 12.929688 C 11.597656 12.640625 11.4375 10.335938 11.4375 10.335938 C 11.4375 10.335938 11.449219 9.496094 11.171875 9.121094 C 10.960938 8.835938 10.5625 8.75 10.382813 8.726563 C 10.238281 8.707031 10.476563 8.375 10.78125 8.226563 C 11.238281 8.003906 12.046875 7.988281 13 8 C 13.742188 8.007813 13.957031 8.054688 14.246094 8.125 C 15.125 8.335938 14.828125 9.152344 14.828125 11.113281 C 14.828125 11.742188 14.714844 12.625 15.167969 12.917969 C 15.363281 13.042969 15.839844 12.9375 17.027344 10.914063 C 17.59375 9.953125 18.015625 8.828125 18.015625 8.828125 C 18.015625 8.828125 18.109375 8.625 18.253906 8.539063 C 18.402344 8.453125 18.601563 8.480469 18.601563 8.480469 L 21.277344 8.460938 C 21.277344 8.460938 22.078125 8.367188 22.210938 8.730469 C 22.347656 9.109375 21.910156 10 20.816406 11.457031 C 19.019531 13.847656 18.820313 13.625 20.3125 15.007813 Z"/></svg>
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                fill="currentColor"
+                viewBox="0 0 27 27"
+                width="24"
+                height="24"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M 21.269531 0 L 5.464844 0 C 2.660156 0 0 2.199219 0 5 L 0 20.8125 C 0 23.613281 2.660156 26 5.464844 26 L 21.273438 26 C 24.074219 26 26 23.613281 26 20.8125 L 26 5 C 26 2.199219 24.074219 0 21.269531 0 Z M 20.3125 15.007813 C 21.734375 16.328125 22.03125 16.972656 22.078125 17.050781 C 22.667969 18.03125 21.425781 18.105469 21.425781 18.105469 L 19.050781 18.140625 C 19.050781 18.140625 18.539063 18.242188 17.867188 17.777344 C 16.976563 17.171875 16.140625 15.585938 15.484375 15.789063 C 14.824219 16 14.84375 17.429688 14.84375 17.429688 C 14.84375 17.429688 14.847656 17.679688 14.699219 17.84375 C 14.535156 18.015625 14.214844 18 14.214844 18 L 13.148438 18 C 13.148438 18 10.800781 18.195313 8.734375 16.042969 C 6.480469 13.695313 4.492188 9.066406 4.492188 9.066406 C 4.492188 9.066406 4.378906 8.773438 4.5 8.625 C 4.640625 8.460938 5.023438 8.453125 5.023438 8.453125 L 7.566406 8.441406 C 7.566406 8.441406 7.804688 8.484375 7.976563 8.609375 C 8.117188 8.710938 8.199219 8.90625 8.199219 8.90625 C 8.199219 8.90625 8.609375 9.949219 9.152344 10.886719 C 10.214844 12.722656 10.710938 13.125 11.070313 12.929688 C 11.597656 12.640625 11.4375 10.335938 11.4375 10.335938 C 11.4375 10.335938 11.449219 9.496094 11.171875 9.121094 C 10.960938 8.835938 10.5625 8.75 10.382813 8.726563 C 10.238281 8.707031 10.476563 8.375 10.78125 8.226563 C 11.238281 8.003906 12.046875 7.988281 13 8 C 13.742188 8.007813 13.957031 8.054688 14.246094 8.125 C 15.125 8.335938 14.828125 9.152344 14.828125 11.113281 C 14.828125 11.742188 14.714844 12.625 15.167969 12.917969 C 15.363281 13.042969 15.839844 12.9375 17.027344 10.914063 C 17.59375 9.953125 18.015625 8.828125 18.015625 8.828125 C 18.015625 8.828125 18.109375 8.625 18.253906 8.539063 C 18.402344 8.453125 18.601563 8.480469 18.601563 8.480469 L 21.277344 8.460938 C 21.277344 8.460938 22.078125 8.367188 22.210938 8.730469 C 22.347656 9.109375 21.910156 10 20.816406 11.457031 C 19.019531 13.847656 18.820313 13.625 20.3125 15.007813 Z"
+                />
+              </svg>
             </a>
           </div>
         </div>
         <nav class="footer__nav">
           <ul class="footer__nav-list">
             <li class="footer__nav-item">
-              <a class="footer__nav-link" href="index.html#main" data-link="main">Главная</a>
+              <a
+                class="footer__nav-link"
+                href="index.html#main"
+                data-link="main"
+                >Главная</a
+              >
             </li>
 
             <li class="footer__nav-item">
-              <a class="footer__nav-link" href="index.html#how" data-link="how">Как это сделано?</a>
+              <a class="footer__nav-link" href="index.html#how" data-link="how"
+                >Как это сделано?</a
+              >
             </li>
 
             <li class="footer__nav-item">
-              <a class="footer__nav-link" href="index.html#products" data-link="products">Наши эклеры</a>
+              <a
+                class="footer__nav-link"
+                href="index.html#products"
+                data-link="products"
+                >Наши эклеры</a
+              >
             </li>
 
             <li class="footer__nav-item">
-              <a class="footer__nav-link" href="index.html#top" data-link="top">Лидеры продаж</a>
+              <a
+                class="footer__nav-link"
+                href="index.html#bestsellers"
+                data-link="bestsellers"
+                >Лидеры продаж</a
+              >
             </li>
 
             <li class="footer__nav-item">
-              <a class="footer__nav-link" href="index.html#eclairs" data-link="eklers">Эклеры - это любовь</a>
+              <a
+                class="footer__nav-link"
+                href="index.html#eclairs"
+                data-link="eclairs"
+                >Эклеры - это любовь</a
+              >
             </li>
           </ul>
         </nav>
@@ -572,19 +759,52 @@
     </footer>
 
     <section class="subscribe__popup">
-      <form class="subscribe__form" method="post" action="https://echo.htmlacademy.ru">
+      <form
+        class="subscribe__form"
+        method="post"
+        action="https://echo.htmlacademy.ru"
+      >
         <div class="subscribe-popup__img"></div>
         <div class="container subscribe-popup__container">
-          <h4 class="subscribe-popup__title">попробуй<br><span class="decaration-orange">новые эклеры</span> первым!</h4>
+          <h4 class="subscribe-popup__title">
+            попробуй<br /><span class="decaration-orange">новые эклеры</span>
+            первым!
+          </h4>
           <div class="subscribe-popup__second-line">
-            <input name="subscribe-email" type="email" placeholder="Введите свой email" required minlength="6" maxlength="32">
-            <button type="submit" class="button button--orange subscribe-popup__button">Подписаться</button>
+            <input
+              name="subscribe-email"
+              type="email"
+              placeholder="Введите свой email"
+              required
+              minlength="6"
+              maxlength="32"
+            />
+            <button
+              type="submit"
+              class="button button--orange subscribe-popup__button"
+            >
+              Подписаться
+            </button>
           </div>
         </div>
-        <button type="button" class="subscribe-popup__close-button close__button">
-          <svg width="28" height="28" viewBox="0 0 28 28" fill="currenColor" xmlns="http://www.w3.org/2000/svg">
-            <path d="M21 7L7 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
-            <path d="M7 7L21 21" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+        <button
+          type="button"
+          class="subscribe-popup__close-button close__button close__button--white"
+        >
+          <svg
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="currentColor"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M20.6377 1.54594L1.54585 20.6378M1.54585 1.54594L20.6377 20.6378"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+            />
           </svg>
         </button>
       </form>

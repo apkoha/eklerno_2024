@@ -1,6 +1,18 @@
-//плавный скролл до блока с id совпадающим с data-attribute ссылки в навигации.
-//превентдефаулт позволяет оставить атрибут href для ссылок. Чтобы продолжало работать выделение через tab
-//и на случай отключения скрипта.
+import ECLAIRS from "../eclairs.json" with { type: "json" };
+import { createBestsellersList, getBestEclairs } from "./bestsellers.js";
+import { getEclairsData, createPaginationContainer } from "./products.js";
+
+const init = () => {
+  getEclairsData(ECLAIRS);
+  createPaginationContainer();
+  createBestsellersList();
+  getBestEclairs(ECLAIRS);
+};
+
+init();
+
+// плавный скролл до блока с id совпадающим с data-attribute ссылки в навигации.
+const headerNav = document.querySelector(".header__nav");
 const navLinks = document.querySelectorAll(".header__link, .footer__nav-link");
 
 for (let i = 0; i < navLinks.length; i++) {
@@ -9,10 +21,11 @@ for (let i = 0; i < navLinks.length; i++) {
     document
       .getElementById(navLinks[i].getAttribute("data-link"))
       .scrollIntoView({ behavior: "smooth" });
-    navLinks.classList.remove("header__nav_active");
+    headerNav.classList.remove("header__nav_active");
   };
 }
 
+//скролл к блоку "Как это сделано"
 const buttonHowMake = document.querySelector(".hero__button-how");
 const howMakeBlock = document.getElementById("how");
 
@@ -20,6 +33,7 @@ buttonHowMake.addEventListener("click", (e) => {
   howMakeBlock.scrollIntoView({ behavior: "smooth" });
 });
 
+//скролл к блоку "Наши эклеры"
 const heroBuyButton = document.querySelector(".hero__button-buy");
 const productsBlock = document.getElementById("products");
 
@@ -57,9 +71,9 @@ const subscribeCloseButton = document.querySelector(
 );
 const subscribePopup = document.querySelector(".subscribe__popup");
 
-const sellersButton = document.querySelector(".sellers__button ");
-const oderCloseButton = document.querySelector(".form__client_close-button");
-const cartPopup = document.querySelector(".cart__popup");
+// const sellersButton = document.querySelector(".sellers__button ");
+// const oderCloseButton = document.querySelector(".form__client_close-button");
+// const cartPopup = document.querySelector(".cart__popup");
 
 //открытие бургер навигации
 const burger = document.querySelector(".burger");
@@ -96,75 +110,17 @@ subscribeCloseButton.addEventListener("click", (e) => {
 //   cartPopup.classList.remove("show__popup");
 // });
 
+//закрытие окон и бургера по клавише ESC
 window.addEventListener("keydown", (e) => {
   if (e.keyCode === 27) {
     if (
       subscribePopup.classList.contains("show__popup") ||
-      cartPopup.classList.contains("show__popup") ||
-      headerNavigation.classList.contains("header__nav_active")
+      headerNav.classList.contains("header__nav_active")
     ) {
       e.preventDefault();
       subscribePopup.classList.remove("show__popup");
-      cartPopup.classList.remove("show__popup");
-      headerNavigation.classList.remove("header__nav_active");
+      headerNav.classList.remove("header__nav_active");
     }
   }
 });
 
-//слайдер https://swiperjs.com/element
-//https://youtu.be/ddbxsrGPRY0 - туториал
-
-const swiper = new Swiper(".products__slider", {
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-
-  slidesPerView: 4,
-  spaceBetween: 18,
-
-  breakpoints: {
-    320: {
-      slidesPerView: 1,
-    },
-
-    610: {
-      slidesPerView: 2,
-    },
-
-    910: {
-      slidesPerView: 3,
-    },
-
-    1200: {
-      slidesPerView: 4,
-    },
-  },
-});
-
-//слайдер отзывов
-
-const swiperReview = new Swiper(".review__slider", {
-  pagination: {
-    el: ".swiper-pagination",
-    clickable: true,
-  },
-
-  slidesPerView: 3,
-  spaceBetween: 16,
-
-  breakpoints: {
-    319: {
-      slidesPerView: 1,
-    },
-
-    741: {
-      slidesPerView: 2,
-    },
-
-    1200: {
-      slidesPerView: 3,
-      spaceBetween: 28,
-    },
-  },
-});

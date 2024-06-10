@@ -1,0 +1,96 @@
+[
+  {
+    "category": "sweet",
+    "id": 1,
+    "title": "лесные ягоды",
+    "price": 1450,
+    "urlToImages": [
+      "./img/five_eclairs_assorted.jpg"
+    ],
+    "description": "лесные ягоды и глазурь",
+    "isBestSeller": false
+  },
+  {
+    "category": "sweet",
+    "id": 2,
+    "title": "приятный вечер",
+    "price": 1480,
+    "urlToImages": [
+      "./img/five_eclairs_box.jpg"
+    ],
+    "description": "Ассорти ягод и глазури",
+    "isBestSeller": false
+  },
+  {
+    "category": "sweet",
+    "id": 3,
+    "title": "Инжир",
+    "price": 1050,
+    "urlToImages": [
+      "./img/three_eclairs_flowers.jpg"
+    ],
+    "description": "Фруктовое ассорти",
+    "isBestSeller": false
+  },
+  {
+    "category": "sweet",
+    "id": 4,
+    "title": "малина",
+    "price": 380,
+    "urlToImages": [
+      "./img/raspberries_eclair.jpg"
+    ],
+    "description": "Малина со сливками",
+    "isBestSeller": false
+  },
+  {
+    "category": "sweet",
+    "id": 5,
+    "title": "Клубника",
+    "price": 975,
+    "urlToImages": [
+      "./img/strawberry_eclair.jpg"
+    ],
+    "description": "Клубника со сливками",
+    "isBestSeller": false
+  },
+  {
+    "category": "sweet",
+    "id": 6,
+    "title": "лайм",
+    "price": 350,
+    "weight": 70,
+    "urlToImages": [
+      "./img/lime_eclairs.jpg",
+      "./img/lime_eclairs-orig.jpg"
+    ],
+    "description": "Лайм и шоколад",
+    "isBestSeller": true
+  },
+  {
+    "category": "sweet",
+    "id": 7,
+    "title": "арахис",
+    "price": 400,
+    "weight": 75,
+    "urlToImages": [
+      "./img/peanut_eclairs.jpg",
+      "./img/peanut_orig.jpg"
+    ],
+    "description": "Арахис и карамель, фундук",
+    "isBestSeller": true
+  },
+  {
+    "category": "sweet",
+    "id": 8,
+    "title": "кокос",
+    "price": 350,
+    "weight": 75,
+    "urlToImages": [
+      "./img/coconut_eclairs.jpg",
+      "../img/coconut_orig.jpg"
+    ],
+    "description": "Кокос и белый шоколад",
+    "isBestSeller": true
+  }
+]
