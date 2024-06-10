@@ -9,7 +9,7 @@ for (let i = 0; i < navLinks.length; i++) {
     document
       .getElementById(navLinks[i].getAttribute("data-link"))
       .scrollIntoView({ behavior: "smooth" });
-    navigation.classList.remove("header__nav_active");
+    navLinks.classList.remove("header__nav_active");
   };
 }
 
@@ -86,15 +86,15 @@ subscribeCloseButton.addEventListener("click", (e) => {
   subscribePopup.classList.remove("show__popup");
 });
 
-sellersButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  cartPopup.classList.add("show__popup");
-});
+// sellersButton.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   cartPopup.classList.add("show__popup");
+// });
 
-oderCloseButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  cartPopup.classList.remove("show__popup");
-});
+// oderCloseButton.addEventListener("click", (e) => {
+//   e.preventDefault();
+//   cartPopup.classList.remove("show__popup");
+// });
 
 window.addEventListener("keydown", (e) => {
   if (e.keyCode === 27) {
@@ -154,7 +154,7 @@ const swiperReview = new Swiper(".review__slider", {
   spaceBetween: 16,
 
   breakpoints: {
-    320: {
+    319: {
       slidesPerView: 1,
     },
 

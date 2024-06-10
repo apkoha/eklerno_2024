@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Эклерно</title>
+
+    <link rel="icon" href="./img/logo-icon.png" type="image/png" />
+
+    <link rel="stylesheet" href="./css/normalize.css" />
+    <link rel="stylesheet" href="./css/order.css" />
+
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <section class="cart__popup">
+      <form
+        class="cart-popup__form"
+        method="post"
+        action="https://echo.htmlacademy.ru"
+      >
+        <div class="container cart-popup__container">
+          <h4 class="cart-popup__title">
+            <span class="decaration-orange">купить</span> сейчас
+          </h4>
+          <ul class="cart-popup__list">
+            <li class="cart-popup__item">
+              <img
+                class="cart-popup__img"
+                src="./img/dark-chocolate.png"
+                alt=""
+                width="121"
+                height="107"
+              />
+              <p class="cart-popup__text">100 гр.</p>
+            </li>
+
+            <li class="cart-popup__item">
+              <img
+                class="cart-popup__img"
+                src="./img/milk-chocolate.png"
+                alt=""
+                width="121"
+                height="107"
+              />
+              <p class="cart-popup__text">100 гр.</p>
+            </li>
+
+            <li class="cart-popup__item">
+              <img
+                class="cart-popup__img"
+                src="./img/chocolate_buy.png"
+                alt=""
+                width="121"
+                height="107"
+              />
+              <p class="cart-popup__text">100 гр.</p>
+            </li>
+          </ul>
+
+          <fieldset class="form__fieldset form__fieldset_client">
+            <p class="form__fieldset_text">Ваши данные</p>
+            <div class="fieldset__inputs-container">
+              <input
+                class="form__fieldset_input"
+                type="text"
+                name="first-name"
+                placeholder="Имя"
+                required
+                minlength="2"
+              />
+              <input
+                class="form__fieldset_input"
+                type="text"
+                name="name"
+                placeholder="Фамилия"
+                required
+                minlength="2"
+              />
+            </div>
+
+            <p class="form__fieldset_text">Email</p>
+            <input
+              class="form__fieldset_input fieldset__input--email"
+              type="email"
+              name="email"
+              id=""
+              placeholder="Введите свой email"
+              required
+              minlength="6"
+              maxlength="32"
+            />
+
+            <p class="form__fieldset_text">Номер телефона</p>
+            <input
+              class="form__fieldset_input fieldset__input--number"
+              type="text"
+              name="phone-number"
+              id=""
+              placeholder="номер телефона"
+              required
+              minlength="11"
+              maxlength="32"
+            />
+
+            <p class="form__fieldset_text">Комментарий</p>
+            <textarea
+              class="form__fieldset_textarea"
+              name="comment"
+              id=""
+              placeholder="Введите текст"
+            ></textarea>
+
+            <button class="button form__client_button-submit button--orange">
+              Отправить
+            </button>
+            <a
+              href="index.html#products"
+              class="form__client_close-button close__button"
+            >
+              <svg
+                width="28"
+                height="28"
+                viewBox="0 0 28 28"
+                fill="currenColor"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  d="M21 7L7 21"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+                <path
+                  d="M7 7L21 21"
+                  stroke="black"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </a>
+          </fieldset>
+        </div>
+      </form>
+    </section>
+  </body>
+</html>
