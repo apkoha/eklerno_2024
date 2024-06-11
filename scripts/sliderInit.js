@@ -13,6 +13,9 @@ const swiper = new Swiper(".products__slider", {
   // отступ между слайдами
   spaceBetween: 18,
 
+  //скорость перелистывания
+  speed: 400,
+
   // настройка количества слайдов в зависимости от разрешения экрана
   breakpoints: {
     320: {
@@ -42,6 +45,7 @@ const swiperReview = new Swiper(".review__slider", {
 
   slidesPerView: 3,
   spaceBetween: 16,
+  speed: 400,
 
   breakpoints: {
     319: {

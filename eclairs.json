@@ -88,7 +88,7 @@
     "weight": 75,
     "urlToImages": [
       "./img/coconut_eclairs.jpg",
-      "../img/coconut_orig.jpg"
+      "./img/coconut_orig.jpg"
     ],
     "description": "Кокос и белый шоколад",
     "isBestSeller": true
