@@ -11,42 +11,6 @@ const init = () => {
 
 init();
 
-// плавный скролл до блока с id совпадающим с data-attribute ссылки в навигации.
-const headerNav = document.querySelector(".header__nav");
-const navLinks = document.querySelectorAll(".header__link, .footer__nav-link");
-
-for (let i = 0; i < navLinks.length; i++) {
-  navLinks[i].onclick = function (e) {
-    e.preventDefault();
-    document
-      .getElementById(navLinks[i].getAttribute("data-link"))
-      .scrollIntoView({ behavior: "smooth" });
-    headerNav.classList.remove("header__nav_active");
-  };
-}
-
-//скролл к блоку "Как это сделано"
-const buttonHowMake = document.querySelector(".hero__button-how");
-const howMakeBlock = document.getElementById("how");
-
-buttonHowMake.addEventListener("click", (e) => {
-  howMakeBlock.scrollIntoView({ behavior: "smooth" });
-});
-
-//скролл к блоку "Наши эклеры"
-const heroBuyButton = document.querySelector(".hero__button-buy");
-const productsBlock = document.getElementById("products");
-
-heroBuyButton.addEventListener("click", (e) => {
-  productsBlock.scrollIntoView({ behavior: "smooth" });
-});
-
-const buttonScrollDown = document.querySelector(".hero__button-scroll");
-
-buttonScrollDown.addEventListener("click", (e) => {
-  productsBlock.scrollIntoView({ behavior: "smooth" });
-});
-
 //переворот карточек компонентов
 const compoundCardsList = document.querySelector(".compound__list");
 const compoundCardItems = document.querySelectorAll(".compound__item");
@@ -64,18 +28,47 @@ compoundCardsList.addEventListener("click", ({ target }) => {
   }
 });
 
-//закрытие popup subscribe, popup order, бургер навигации
-const subscribeButton = document.querySelector(".subscribe__button");
-const subscribeCloseButton = document.querySelector(
-  ".subscribe-popup__close-button"
-);
-const subscribePopup = document.querySelector(".subscribe__popup");
+//Универсальная функция открытия/закрытия модалок
+//в даннос случаи popup subscribe.
+const modalController = ({modal, btnOpen, btnClose}) => {
+  const buttonsModal = document.querySelectorAll(btnOpen);
+  const modalElem = document.querySelector(modal);
+  
+  const closeModal = event => {
+    const target = event.target;
+  
+    if (target.closest(btnClose) || event.code === 'Escape'){
+      modalElem.style.opacity = 0;
+  
+      setTimeout (() => {modalElem.style.visibility = "hidden";
+      }, 300)
+      
+      window.removeEventListener('keydown', closeModal);
+    };
+  }
 
-// const sellersButton = document.querySelector(".sellers__button ");
-// const oderCloseButton = document.querySelector(".form__client_close-button");
-// const cartPopup = document.querySelector(".cart__popup");
+  const openModal = () => {
+  modalElem.style.visibility = "visible";
+  modalElem.style.opacity = 1
+  window.addEventListener('keydown', closeModal);
+}
 
-//открытие бургер навигации
+
+//перебираем все кнопки с классом .modal__section и на каждую навешиваем слушатель
+buttonsModal.forEach(button => {
+  button.addEventListener("click", openModal)
+})
+
+modalElem.addEventListener("click", closeModal);
+}
+
+modalController({
+  modal: ".subscribe__popup",
+  btnOpen: ".subscribe__button",
+  btnClose: ".subscribe-popup__close-button"
+})
+
+// открытие бургер навигации
 const burger = document.querySelector(".burger");
 const headerNavigation = document.querySelector(".header__nav");
 const headerCloseButton = document.querySelector(".header__close-button");
@@ -90,37 +83,26 @@ headerCloseButton.addEventListener("click", (e) => {
   headerNavigation.classList.remove("header__nav_active");
 });
 
-subscribeButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  subscribePopup.classList.add("show__popup");
-});
-
-subscribeCloseButton.addEventListener("click", (e) => {
-  e.preventDefault();
-  subscribePopup.classList.remove("show__popup");
-});
-
-// sellersButton.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   cartPopup.classList.add("show__popup");
-// });
-
-// oderCloseButton.addEventListener("click", (e) => {
-//   e.preventDefault();
-//   cartPopup.classList.remove("show__popup");
-// });
-
-//закрытие окон и бургера по клавише ESC
+//закрытие бургера по клавише ESC
 window.addEventListener("keydown", (e) => {
   if (e.keyCode === 27) {
     if (
-      subscribePopup.classList.contains("show__popup") ||
-      headerNav.classList.contains("header__nav_active")
+      headerNavigation.classList.contains("header__nav_active")
     ) {
       e.preventDefault();
-      subscribePopup.classList.remove("show__popup");
-      headerNav.classList.remove("header__nav_active");
+      headerNavigation.classList.remove("header__nav_active");
     }
   }
 });
+
+
+// закрытие бургер навигации при клике по ссылке в ней
+const headerNav = document.querySelector(".header__nav");
+const navLinks = document.querySelectorAll(".header__link, .footer__nav-link");
+
+for (let i = 0; i < navLinks.length; i++) {
+  navLinks[i].onclick = function (e) {
+    headerNav.classList.remove("header__nav_active");
+  };
+}
 

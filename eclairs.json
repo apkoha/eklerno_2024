@@ -2,7 +2,7 @@
   {
     "category": "sweet",
     "id": 1,
-    "title": "лесные ягоды",
+    "title": "наслаждение",
     "price": 1450,
     "urlToImages": [
       "./img/five_eclairs_assorted.jpg"
@@ -13,7 +13,7 @@
   {
     "category": "sweet",
     "id": 2,
-    "title": "приятный вечер",
+    "title": "каприз",
     "price": 1480,
     "urlToImages": [
       "./img/five_eclairs_box.jpg"
