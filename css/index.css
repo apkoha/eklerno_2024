@@ -85,6 +85,7 @@ button {
   cursor: pointer;
   border: none;
   background-color: transparent;
+  text-align: center;
 }
 
 a {
@@ -221,7 +222,7 @@ iframe {
 .header__nav {
   display: flex;
   align-items: center;
-  gap: 136px;
+  gap: 80px;
 }
 
 .header__close-button {
@@ -334,7 +335,8 @@ iframe {
 }
 
 .hero__text {
-  width: 484px;
+  /* width: 484px; */
+  width: 570px;
   margin-bottom: 32px;
   font-weight: 500;
   font-size: 28px;
@@ -881,7 +883,6 @@ iframe {
 
 .subscribe {
   width: 100%;
-  height: 370px;
   background-size: cover;
   background-image: url(../img/subscribe-cover.jpg);
   background-color: #636363;
@@ -914,6 +915,10 @@ iframe {
   letter-spacing: -0.02em;
   text-align: center;
   color: #fff;
+}
+
+.subscribe__button {
+  margin-bottom: 72px;
 }
 
 .footer {
@@ -1391,6 +1396,10 @@ iframe {
 }
 
 @media (max-width: 610px) {
+  .hero__text {
+    width: 500px;
+  }
+
   .products__slider {
     max-width: 336px;
   }
@@ -1556,6 +1565,10 @@ iframe {
 
   .subscribe__text {
     width: 326px;
+  }
+
+  .subscribe__button {
+    margin-bottom: 64px;
   }
 
   .subscribe__popup {
