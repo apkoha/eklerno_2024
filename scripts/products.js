@@ -9,7 +9,6 @@ const createSwiperProductCard = (eclair) => {
 
   const productContainer = document.createElement("div");
   productContainer.classList.add("products__item");
-  swiperSlideContainer.append(productContainer);
 
   productContainer.innerHTML = `
   <img
@@ -24,9 +23,17 @@ const createSwiperProductCard = (eclair) => {
   <div class="products__price">
   <p class="products__price-text">${eclair.price} ₽</p>
   </div>
+  <button class="products__button button--orange" data-id="${eclair.id}">Выбрать</button>
   `;
 
   swiperSlideContainer.append(productContainer);
+
+  // создание блока пагинации (буллетов)
+  const productsSlider = document.querySelector(".products__slider");
+  const swiperPaginationContainer = document.createElement("div");
+  swiperPaginationContainer.classList.add("swiper-pagination");
+  swiperPaginationContainer.id = "products__swiper-pagination";
+  productsSlider.append(swiperPaginationContainer);
 };
 
 //для каждого элемента массива ECLAIRS выполни функцию createSwiperProductCard
@@ -34,14 +41,4 @@ export const getEclairsData = (ECLAIRS) => {
   for (const eclair of ECLAIRS) {
     createSwiperProductCard(eclair);
   }
-};
-
-// создание блока пагинации (буллетов)
-export const createPaginationContainer = () => {
-  const productsSlider = document.querySelector(".products__slider");
-
-  const swiperPaginationContainer = document.createElement("div");
-  swiperPaginationContainer.classList.add("swiper-pagination");
-  swiperPaginationContainer.id = "swiper-pagination";
-  productsSlider.append(swiperPaginationContainer);
 };
