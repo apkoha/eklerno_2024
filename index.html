@@ -14,7 +14,6 @@
       href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
 
-    <!-- <script src="./scripts/products.js" type="module"></script> -->
     <script src="./scripts/main.js" type="module"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="./scripts/sliderInit.js" defer></script>
@@ -184,26 +183,23 @@
           Побалуйте себя и&nbsp;любимого человека нашими лучшими эклерами
           и&nbsp;подарите&nbsp;момент настоящего&nbsp;удовольствия
         </h2>
-        <div class="hero__buttons">
-          <div class="hero__buttons_container">
+        <div class="hero__links">
+          <div class="hero__links_container">
             <a
               href="index.html#products"
-              class="hero__button hero__button-buy button--orange button"
+              class="hero__link hero__link-buy link--orange"
             >
               Купить
             </a>
-            <a
-              href="index.html#how"
-              class="hero__button hero__button-how button"
-            >
+            <a href="index.html#how" class="hero__link hero__link-how">
               Как это сделано?
             </a>
           </div>
-          <div class="hero__button-scroll_container">
-            <p class="hero__button-scroll-text">вниз</p>
+          <div class="hero__link-scroll_container">
+            <p class="hero__link-scroll-text">вниз</p>
             <a
               href="index.html#compound"
-              class="hero__button hero__button-scroll button"
+              class="hero__link hero__link-scroll"
             ></a>
           </div>
         </div>
@@ -294,125 +290,114 @@
         </p>
 
         <ul class="compound__list">
-          <li
-            class="compound__item compound__item--top-side"
-            data-compound="chocolate"
-          >
-            <img
-              class="compound__item-img"
-              src="./img/chocolate-img.png"
-              alt="изображение шоколадной плитки"
-              width="206"
-              height="160"
-            />
-            <p class="compound__item-text">молочный шоколад</p>
+          <li class="compound__item" data-compound="chocolate">
+            <div class="compound__item-container">
+              <div class="card__front">
+                <img
+                  class="compound__item-img"
+                  src="./img/chocolate-img.png"
+                  alt="изображение шоколадной плитки"
+                  width="206"
+                  height="160"
+                />
+                <p class="compound__item-text">молочный шоколад</p>
+              </div>
+              <div class="card__back">
+                <h3 class="compound__item-title">молочный шоколад</h3>
+                <button class="button compound__item-button button--orange">
+                  шоколад
+                </button>
+                <p class="compound__item-card-text">
+                  Milk chocolate is a solid chocolate confectionery containing
+                  cocoa, sugar and milk. It is the most consumed type of
+                  chocolate. Chocolate was originally sold and consumed as a
+                  beverage in pre-Columbian times. Although four-fifths of all
+                  milk chocolate is sold in the United States and Europe.
+                </p>
+              </div>
+            </div>
           </li>
 
-          <li
-            class="compound__item compound__item--second-side visually-hidden"
-            id="chocolate"
-          >
-            <h3 class="compound__item-title">молочный шоколад</h3>
-            <button class="button compound__item-button button--orange">
-              шоколад
-            </button>
-            <p class="compound__item-card-text">
-              Milk chocolate is a solid chocolate confectionery containing
-              cocoa, sugar and milk. It is the most consumed type of chocolate.
-              Chocolate was originally sold and consumed as a beverage in
-              pre-Columbian times. Although four-fifths of all milk chocolate is
-              sold in the United States and Europe.
-            </p>
+          <li class="compound__item" data-compound="milk">
+            <div class="compound__item-container">
+              <div class="card__front">
+                <img
+                  class="compound__item-img"
+                  src="./img/milk-img.png"
+                  alt="изображение бутылки молока"
+                  width="206"
+                  height="160"
+                />
+                <p class="compound__item-text">молоко</p>
+              </div>
+              <div class="card__back">
+                <h3 class="compound__item-title">молоко</h3>
+                <button class="button compound__item-button button--orange">
+                  молоко
+                </button>
+                <p class="compound__item-card-text">
+                  Milk is a white liquid food produced by the mammary glands of
+                  mammals. It is the primary source of nutrition for young
+                  mammals (including breastfed human infants) before they are
+                  able to digest solid food.Early-lactation milk, which is
+                  called colostrum
+                </p>
+              </div>
+            </div>
           </li>
 
-          <li
-            class="compound__item compound__item--top-side"
-            data-compound="milk"
-          >
-            <img
-              class="compound__item-img"
-              src="./img/milk-img.png"
-              alt="изображение бутылки молока"
-              width="206"
-              height="160"
-            />
-            <p class="compound__item-text">молоко</p>
+          <li class="compound__item" data-compound="nuts">
+            <div class="compound__item-container">
+              <div class="card__front">
+                <img
+                  class="compound__item-img"
+                  src="./img/nuts-img.png"
+                  alt="изображение цельных лесных орехов"
+                  width="206"
+                  height="160"
+                />
+                <p class="compound__item-text">орехи</p>
+              </div>
+              <div class="card__back">
+                <h3 class="compound__item-title">орехи</h3>
+                <button class="button compound__item-button button--orange">
+                  орехи
+                </button>
+                <p class="compound__item-card-text">
+                  Almonds, pistachios, and walnuts are some types of nuts that
+                  contain healthy nutrients. When eaten as part of a
+                  nutrient-dense diet, these 9 nuts may offer benefits such as
+                  reducing your risk of heart disease. They’re a good source of
+                  fiber, healthy fats, and plant protein.
+                </p>
+              </div>
+            </div>
           </li>
 
-          <li
-            class="compound__item compound__item--second-side visually-hidden"
-            id="milk"
-          >
-            <h3 class="compound__item-title">молоко</h3>
-            <button class="button compound__item-button button--orange">
-              молоко
-            </button>
-            <p class="compound__item-card-text">
-              Milk is a white liquid food produced by the mammary glands of
-              mammals. It is the primary source of nutrition for young mammals
-              (including breastfed human infants) before they are able to digest
-              solid food.Early-lactation milk, which is called colostrum
-            </p>
-          </li>
-
-          <li
-            class="compound__item compound__item--top-side"
-            data-compound="nuts"
-          >
-            <img
-              class="compound__item-img"
-              src="./img/nuts-img.png"
-              alt="изображение цельных лесных орехов"
-              width="206"
-              height="160"
-            />
-            <p class="compound__item-text">орехи</p>
-          </li>
-
-          <li
-            class="compound__item compound__item--second-side visually-hidden"
-            id="nuts"
-          >
-            <h3 class="compound__item-title">орехи</h3>
-            <button class="button compound__item-button button--orange">
-              орехи
-            </button>
-            <p class="compound__item-card-text">
-              Almonds, pistachios, and walnuts are some types of nuts that
-              contain healthy nutrients. When eaten as part of a nutrient-dense
-              diet, these 9 nuts may offer benefits such as reducing your risk
-              of heart disease. They’re a good source of fiber, healthy fats,
-              and plant protein.
-            </p>
-          </li>
-
-          <li
-            class="compound__item compound__item--top-side"
-            data-compound="cacao"
-          >
-            <img
-              class="compound__item-img"
-              src="./img/coffe-img.png"
-              alt="изображение зёрен какао"
-              width="206"
-              height="160"
-            />
-            <p class="compound__item-text">ПОЛУСЛАДКИЙ ШОКОЛАД</p>
-          </li>
-
-          <li
-            class="compound__item compound__item--second-side visually-hidden"
-            id="cacao"
-          >
-            <h3 class="compound__item-title">ПОЛУСЛАДКИЙ ШОКОЛАД</h3>
-            <button class="button compound__item-button button--orange">
-              СЛАДКИЙ ШОКОЛАД
-            </button>
-            <p class="compound__item-card-text">
-              Semi-sweet chocolate has a cocoa solid content of 35 to 65%. One
-              of the best ways to gain an understanding of this type of
-              chocolate is to compare it to a different type of chocolate.
-            </p>
+          <li class="compound__item" data-compound="cacao">
+            <div class="compound__item-container">
+              <div class="card__front">
+                <img
+                  class="compound__item-img"
+                  src="./img/coffe-img.png"
+                  alt="изображение зёрен какао"
+                  width="206"
+                  height="160"
+                />
+                <p class="compound__item-text">ПОЛУСЛАДКИЙ ШОКОЛАД</p>
+              </div>
+              <div class="card__back">
+                <h3 class="compound__item-title">ПОЛУСЛАДКИЙ ШОКОЛАД</h3>
+                <button class="button compound__item-button button--orange">
+                  СЛАДКИЙ ШОКОЛАД
+                </button>
+                <p class="compound__item-card-text">
+                  Semi-sweet chocolate has a cocoa solid content of 35 to 65%.
+                  One of the best ways to gain an understanding of this type of
+                  chocolate is to compare it to a different type of chocolate.
+                </p>
+              </div>
+            </div>
           </li>
         </ul>
       </div>
@@ -524,99 +509,14 @@
         <h2 class="review__title">
           <span class="decaration-orange">эклеры</span> - это любовь
         </h2>
-        <div class="swiper review__slider">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="slider-item__container">
-                <div class="review__img-container">
-                  <img
-                    class="review__slider-img"
-                    src="./img/buyer-ginger-girl.png"
-                    alt=""
-                    width="80"
-                    height="80"
-                  />
-                </div>
-                <div class="review__info-container">
-                  <h3 class="review__slider-title">Кристина Нежнина</h3>
-                  <p class="review__slider-text">
-                    I love this chocolate bar. Perfect combination of light
-                    crispy wafer, covered in a thin layer chocolate.
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            <div class="swiper-slide">
-              <div class="slider-item__container">
-                <div class="review__img-container">
-                  <img
-                    class="review__slider-img"
-                    src="./img/buyer-man.png"
-                    alt=""
-                    width="80"
-                    height="80"
-                  />
-                </div>
-                <div class="review__info-container">
-                  <h3 class="review__slider-title">Иван Демьян</h3>
-                  <p class="review__slider-text">
-                    Chocolate is a family favourite treat. Love the delicious
-                    smooth chocolate and the creaminess inside. The wafer is
-                    soft but crunchy.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="slider-item__container">
-                <div class="review__img-container">
-                  <img
-                    class="review__slider-img"
-                    src="./img/buyer-girl.png"
-                    alt=""
-                    width="80"
-                    height="80"
-                  />
-                </div>
-                <div class="review__info-container">
-                  <h3 class="review__slider-title">Ульяна Лавинова</h3>
-                  <p class="review__slider-text">
-                    Chocolate is a family favourite treat. Love the delicious
-                    smooth chocolate and the creaminess inside. The wafer is
-                    soft but crunchy.
-                  </p>
-                </div>
-              </div>
-            </div>
-
-            <div class="swiper-slide">
-              <div class="slider-item__container">
-                <div class="review__img-container">
-                  <img
-                    class="review__slider-img"
-                    src="./img/young-blood.jpg"
-                    alt=""
-                    width="80"
-                    height="80"
-                  />
-                </div>
-                <div class="review__info-container">
-                  <h3 class="review__slider-title">Константин Губенков</h3>
-                  <p class="review__slider-text">
-                    This chocolate confection is a delight! A delight! The wafer
-                    is light and crisp, the hazelnut cream is smooth, and the
-                    chocolate is good.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="swiper-pagination" id="swiper-pagination--review"></div>
+        <!-- элементы слайдера https://swiperjs.com/element -->
+        <div class="review__slider swiper">
+          <div class="swiper-wrapper review__swiper-wrapper"></div>
+          <!-- отрисовка карточек слайдера review.js -->
         </div>
         <a
-          class="review__button button"
+          class="review__link"
           href="https://www.vk.com/eclerno_dessert/"
           target="_blank"
           >Оставить отзыв</a
@@ -654,11 +554,13 @@
           </h3>
           <div class="footer__contacts">
             <p class="footer__contacts-text">Контакты</p>
-            <a class="footer__contacts-tel" href="tel:+79204439426"
+            <a
+              class="footer__contacts-tel footer__contacts-link"
+              href="tel:+79204439426"
               >+7 (920) 443-94-26</a
             >
             <a
-              class="footer__contacts-email"
+              class="footer__contacts-email footer__contacts-link"
               href="mailto:amarant2202@gmail.com"
               >akirakurosawa67@gmail.com</a
             >
