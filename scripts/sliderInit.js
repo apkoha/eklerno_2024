@@ -1,6 +1,7 @@
 //слайдер https://swiperjs.com/element
 //https://youtu.be/ddbxsrGPRY0 - туториал
 
+//настройки слайдера товаров(эклеры)
 const swiper = new Swiper(".products__slider", {
   // отображение буллетов пагинации и возможность клика по ним
   pagination: {
@@ -36,7 +37,7 @@ const swiper = new Swiper(".products__slider", {
   },
 });
 
-//слайдер отзывов
+//настройки слайдера отзывов
 const swiperReview = new Swiper(".review__slider", {
   pagination: {
     el: ".swiper-pagination",
