@@ -1,35 +1,22 @@
 import ECLAIRS from "../eclairs.json" with { type: "json" };
+import REVIEWS from "../review.json" with { type: "json" };
 import { createBestsellersList, getBestEclairs } from "./bestsellers.js";
-import { getEclairsData, createPaginationContainer } from "./products.js";
+import { getEclairsData } from "./products.js";
+import { getReviewData } from "./review.js";
 
 const init = () => {
   getEclairsData(ECLAIRS);
-  createPaginationContainer();
+
   createBestsellersList();
   getBestEclairs(ECLAIRS);
+
+  getReviewData(REVIEWS);
 };
 
 init();
 
-//переворот карточек компонентов
-const compoundCardsList = document.querySelector(".compound__list");
-const compoundCardItems = document.querySelectorAll(".compound__item");
-
-compoundCardsList.addEventListener("click", ({ target }) => {
-  const card = target.closest(".compound__item");
-  for (let i = 0; i < compoundCardItems.length; i++) {
-    if (
-      card.dataset.compound == compoundCardItems[i].id ||
-      card.id == compoundCardItems[i].dataset.compound
-    ) {
-      compoundCardItems[i].classList.toggle("visually-hidden");
-      card.classList.toggle("visually-hidden");
-    }
-  }
-});
-
 //Универсальная функция открытия/закрытия модалок
-//в даннос случаи popup subscribe.
+//в данном случаи popup subscribe.
 const modalController = ({modal, btnOpen, btnClose}) => {
   const buttonsModal = document.querySelectorAll(btnOpen);
   const modalElem = document.querySelector(modal);
@@ -95,7 +82,6 @@ window.addEventListener("keydown", (e) => {
   }
 });
 
-
 // закрытие бургер навигации при клике по ссылке в ней
 const headerNav = document.querySelector(".header__nav");
 const navLinks = document.querySelectorAll(".header__link, .footer__nav-link");
@@ -105,4 +91,21 @@ for (let i = 0; i < navLinks.length; i++) {
     headerNav.classList.remove("header__nav_active");
   };
 }
+
+//переворот карточек компонентов
+// const compoundCardsList = document.querySelector(".compound__list");
+// const compoundCardItems = document.querySelectorAll(".compound__item");
+
+// compoundCardsList.addEventListener("click", ({ target }) => {
+//   const card = target.closest(".compound__item");
+//   for (let i = 0; i < compoundCardItems.length; i++) {
+//     if (
+//       card.dataset.compound == compoundCardItems[i].id ||
+//       card.id == compoundCardItems[i].dataset.compound
+//     ) {
+//       compoundCardItems[i].classList.toggle("visually-hidden");
+//       card.classList.toggle("visually-hidden");
+//     }
+//   }
+// });
 
