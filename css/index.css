@@ -299,7 +299,9 @@ iframe {
 .footer__contacts-link:hover,
 .footer__contacts-link:focus,
 .close__button:hover,
-.close__button:focus {
+.close__button:focus,
+#play__btn:hover,
+#play__btn:focus {
   color: #fd9222;
   outline: none;
 }
@@ -307,7 +309,8 @@ iframe {
 .header__social-link:active,
 .footer__social-link:active,
 .footer__contacts-link:active,
-.close__button:active {
+.close__button:active,
+#play__btn:active {
   color: #d66f00;
 }
 
@@ -358,10 +361,16 @@ iframe {
   text-align: center;
 }
 
+.hero__link-buy {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .hero__link-how {
   border: 1px solid #fff;
   border-radius: 100px;
-  padding: 14px 40px;
+  padding: 14px 20px;
   min-width: 183px;
   min-height: 45px;
   color: #fff;
@@ -371,6 +380,11 @@ iframe {
 .hero__link-how:focus {
   border: 1px solid #fd9222;
   color: #fd9222;
+}
+
+.hero__link-how:active {
+  border: 1px solid #d66f00;
+  color: #d66f00;
 }
 
 .hero__link-scroll_container {
@@ -392,20 +406,27 @@ iframe {
   color: #fff;
 }
 
-.hero__link-scroll::before {
+#btn__down {
   position: absolute;
   content: "";
-  top: 14px;
-  right: 13px;
-  width: 22px;
-  height: 22px;
-  background: url("../img/arrow-down-icon.svg") no-repeat center;
+  top: 15px;
+  right: 14px;
+  width: 20px;
+  height: 20px;
+  color: #fd9222;
 }
 
 .hero__link-scroll:hover,
-.hero__link-scroll:focus {
-  background: url("../img/arrow-white-icon.svg") no-repeat center;
+.hero__link-scroll:focus,
+.hero__link-scroll:hover #btn__down,
+.hero__link-scroll:focus #btn__down {
+  color: #fff;
   background-color: #fd9222;
+}
+
+.hero__link-scroll:active,
+.hero__link-scroll:active #btn__down {
+  background-color: #d66f00;
 }
 
 .quality {
@@ -663,6 +684,11 @@ iframe {
   cursor: pointer;
   width: 44px;
   height: 44px;
+  color: #fff;
+}
+
+#play__btn:hover {
+  transform: scale(1.2);
 }
 
 .made__block-right {
@@ -926,6 +952,10 @@ iframe {
   color: #fff;
 }
 
+.review__link:active {
+  background: #d66f00;
+}
+
 .subscribe {
   width: 100%;
   background-size: cover;
@@ -1175,6 +1205,91 @@ iframe {
 
 .burger::after {
   top: calc(100% - var(--size-line));
+}
+
+/* Чекбокс  https://frontips.ru/css-stili-dlya-checkbox/ */
+.checkbox.style-h {
+  display: block;
+  position: relative;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+.checkbox.style-h input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkbox.style-h input:checked ~ .checkbox__checkmark {
+  background-color: #111;
+}
+
+.checkbox.style-h input:checked ~ .checkbox__checkmark:after {
+  opacity: 1;
+  top: -3px;
+}
+
+.checkbox.style-h input:checked ~ .checkbox__body {
+  background-position: 0 0;
+  color: #000;
+}
+
+.checkbox.style-h:hover input ~ .checkbox__checkmark {
+  background-color: #fd9222;
+}
+
+.checkbox.style-h:hover input:checked ~ .checkbox__checkmark {
+  background-color: #111;
+}
+
+.checkbox.style-h .checkbox__checkmark {
+  position: absolute;
+  top: 32%;
+  transform: translateY(-50%);
+  left: 20px;
+  height: 16px;
+  width: 16px;
+  background-color: #fafafa;
+  transition: background-color 0.25s ease;
+  border-radius: 4px;
+  box-shadow: inset 2px 2px 4px rgba(0, 0, 0, 0.1),
+    inset -2px -2px 4px rgba(255, 255, 255, 0.4);
+}
+
+.checkbox.style-h .checkbox__checkmark:after {
+  content: "";
+  position: absolute;
+  left: 6px;
+  top: -15px;
+  width: 5px;
+  height: 10px;
+  border: solid #fff;
+  border-width: 0 4px 4px 0;
+  transform: rotate(45deg);
+  opacity: 0;
+  transition: opacity 0.25s ease, top 0.25s ease;
+}
+
+.checkbox.style-h .checkbox__body {
+  background-size: 200% 100%;
+  background-position: 100% 0;
+  border-radius: 100px;
+  font-weight: 600;
+  font-size: 14px;
+}
+
+.checkbox__body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding-left: 30px;
+  padding-right: 10px;
 }
 
 @media (max-width: 1200px) {
@@ -1462,9 +1577,12 @@ iframe {
 
   .button--orange,
   .link--orange {
-    min-height: 41px;
     padding: 12px 18px;
     font-size: 14px;
+  }
+
+  .checkbox__body {
+    padding: 8px 10px 8px 30px;
   }
 
   .header {
@@ -1563,6 +1681,7 @@ iframe {
   .made__block-link {
     min-width: 320px;
     min-height: 500px;
+    background-image: url("../img/cooking-cover-335.jpg");
   }
 
   .made__block-right {

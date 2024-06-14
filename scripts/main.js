@@ -1,6 +1,7 @@
 import ECLAIRS from "../eclairs.json" with { type: "json" };
 import REVIEWS from "../review.json" with { type: "json" };
 import { createBestsellersList, getBestEclairs } from "./bestsellers.js";
+import { getAddedEclairs } from "./cart.js";
 import { getEclairsData } from "./products.js";
 import { getReviewData } from "./review.js";
 
@@ -108,4 +109,44 @@ for (let i = 0; i < navLinks.length; i++) {
 //     }
 //   }
 // });
+
+const checkboxes = document.querySelectorAll(".checkbox")
+const checkboxesChecked = document.querySelectorAll(".checkbox__input");
+const swiperWrapperContainer = document.querySelector(".swiper-wrapper");
+
+const editCheckboxChecked = () => {
+  const target = event.target;
+  if (!target.closest(".checkbox__input")) return;
+
+  for (let i=0; i < checkboxes.length; i++) {
+    for (let j=0; j < checkboxesChecked.length; j++) {
+      if(checkboxesChecked[j].checked) {
+        checkboxes[j].children[2].innerText = "Выбрано"
+      } else {
+        checkboxes[j].children[2].innerText = "Выбрать"
+      }
+    }
+  }
+}
+
+export let cart = [];
+
+const addToCart = () => {
+  const target = event.target;
+  localStorage.clear();
+
+
+  for (let i=0; i < checkboxesChecked.length; i++) {
+    if(checkboxesChecked[i].checked) {
+      
+      cart.push({"id":checkboxesChecked[i].dataset.id})
+      localStorage.setItem("id", JSON.stringify(cart));
+      // console.log('localStorage: ', localStorage);
+      // return cart;
+    }
+  }
+} 
+
+swiperWrapperContainer.addEventListener("change", editCheckboxChecked);
+swiperWrapperContainer.addEventListener("change", addToCart);
 

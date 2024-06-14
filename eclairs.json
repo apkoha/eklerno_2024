@@ -35,7 +35,7 @@
   {
     "category": "sweet",
     "id": 4,
-    "title": "малина",
+    "title": "малиновый",
     "price": 380,
     "urlToImages": [
       "./img/raspberries_eclair.jpg"
@@ -46,7 +46,7 @@
   {
     "category": "sweet",
     "id": 5,
-    "title": "Клубника",
+    "title": "Клубничный",
     "price": 975,
     "urlToImages": [
       "./img/strawberry_eclair.jpg"
@@ -57,7 +57,7 @@
   {
     "category": "sweet",
     "id": 6,
-    "title": "лайм",
+    "title": "Лаймовый",
     "price": 350,
     "weight": 70,
     "urlToImages": [
@@ -70,7 +70,7 @@
   {
     "category": "sweet",
     "id": 7,
-    "title": "арахис",
+    "title": "Ореховый",
     "price": 400,
     "weight": 75,
     "urlToImages": [
@@ -83,7 +83,7 @@
   {
     "category": "sweet",
     "id": 8,
-    "title": "кокос",
+    "title": "кокосовый",
     "price": 350,
     "weight": 75,
     "urlToImages": [

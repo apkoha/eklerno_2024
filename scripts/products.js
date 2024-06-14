@@ -21,9 +21,13 @@ const createSwiperProductCard = (eclair) => {
   <h3 class="products__item-title">${eclair.title}</h3>
   <p class="products__item-text">${eclair.description}</p>
   <div class="products__price">
-  <p class="products__price-text">${eclair.price} ₽</p>
+    <p class="products__price-text">${eclair.price} ₽</p>
   </div>
-  <button class="products__button button--orange" data-id="${eclair.id}">Выбрать</button>
+  <label class="checkbox style-h">
+    <input class="checkbox__input" type="checkbox" data-id="${eclair.id}"/>
+    <div class="checkbox__checkmark"></div>
+    <div class="products__button button--orange checkbox__body">Выбрать</div>
+  </label>
   `;
 
   swiperSlideContainer.append(productContainer);
