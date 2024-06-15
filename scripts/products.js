@@ -24,7 +24,7 @@ const createSwiperProductCard = (eclair) => {
     <p class="products__price-text">${eclair.price} ₽</p>
   </div>
   <label class="checkbox style-h">
-    <input class="checkbox__input" type="checkbox" data-id="${eclair.id}"/>
+    <input class="checkbox__input" type="checkbox" data-id="${eclair.id}" data-price="${eclair.price}"/>
     <div class="checkbox__checkmark"></div>
     <div class="products__button button--orange checkbox__body">Выбрать</div>
   </label>

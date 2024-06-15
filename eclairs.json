@@ -2,7 +2,7 @@
   {
     "category": "sweet",
     "id": 1,
-    "title": "наслаждение",
+    "title": "сет наслаждение",
     "price": 1450,
     "urlToImages": [
       "./img/five_eclairs_assorted.jpg"
@@ -13,7 +13,7 @@
   {
     "category": "sweet",
     "id": 2,
-    "title": "каприз",
+    "title": "сет каприз",
     "price": 1480,
     "urlToImages": [
       "./img/five_eclairs_box.jpg"
@@ -24,7 +24,7 @@
   {
     "category": "sweet",
     "id": 3,
-    "title": "Инжир",
+    "title": "сет Инжирный",
     "price": 1050,
     "urlToImages": [
       "./img/three_eclairs_flowers.jpg"
@@ -46,7 +46,7 @@
   {
     "category": "sweet",
     "id": 5,
-    "title": "Клубничный",
+    "title": "Клубничный сет",
     "price": 975,
     "urlToImages": [
       "./img/strawberry_eclair.jpg"

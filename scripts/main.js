@@ -1,16 +1,13 @@
 import ECLAIRS from "../eclairs.json" with { type: "json" };
 import REVIEWS from "../review.json" with { type: "json" };
 import { createBestsellersList, getBestEclairs } from "./bestsellers.js";
-import { getAddedEclairs } from "./cart.js";
 import { getEclairsData } from "./products.js";
 import { getReviewData } from "./review.js";
 
 const init = () => {
   getEclairsData(ECLAIRS);
-
   createBestsellersList();
   getBestEclairs(ECLAIRS);
-
   getReviewData(REVIEWS);
 };
 
@@ -93,25 +90,8 @@ for (let i = 0; i < navLinks.length; i++) {
   };
 }
 
-//переворот карточек компонентов
-// const compoundCardsList = document.querySelector(".compound__list");
-// const compoundCardItems = document.querySelectorAll(".compound__item");
-
-// compoundCardsList.addEventListener("click", ({ target }) => {
-//   const card = target.closest(".compound__item");
-//   for (let i = 0; i < compoundCardItems.length; i++) {
-//     if (
-//       card.dataset.compound == compoundCardItems[i].id ||
-//       card.id == compoundCardItems[i].dataset.compound
-//     ) {
-//       compoundCardItems[i].classList.toggle("visually-hidden");
-//       card.classList.toggle("visually-hidden");
-//     }
-//   }
-// });
-
 const checkboxes = document.querySelectorAll(".checkbox")
-const checkboxesChecked = document.querySelectorAll(".checkbox__input");
+export const checkboxesChecked = document.querySelectorAll(".checkbox__input");
 const swiperWrapperContainer = document.querySelector(".swiper-wrapper");
 
 const editCheckboxChecked = () => {
@@ -129,24 +109,72 @@ const editCheckboxChecked = () => {
   }
 }
 
-export let cart = [];
+const cartList = document.querySelector(".cart-popup__list");
+const createCartCards = (eclair) => {
 
-const addToCart = () => {
-  const target = event.target;
-  localStorage.clear();
+  const cartItem = document.createElement("li");
+  cartItem.classList.add("cart-popup__item");
+  cartItem.innerHTML = `
+    <div class="cart__item-container">
+      <img
+        class="cart-popup__img"
+        src="${eclair.urlToImages[0]}"
+        alt=""
+        width="160"
+        height="136"
+      />
+      <h3 class="cart__item-title">${eclair.title}</h3>
+      <div class="cart__item__price">
+        <p class="products__price-text">${eclair.price} ₽</p>
+      </div>
+      <div class="cart__count">
+        <button class="count__minus-btn count__btn">-</button>
+        <div class="cart__count-container">1</div>
+        <button class="count__plus-btn count__btn">+</button>
+      </div>
+    </div>
+  `;
 
+  cartList.append(cartItem);
+};
 
-  for (let i=0; i < checkboxesChecked.length; i++) {
-    if(checkboxesChecked[i].checked) {
-      
-      cart.push({"id":checkboxesChecked[i].dataset.id})
-      localStorage.setItem("id", JSON.stringify(cart));
-      // console.log('localStorage: ', localStorage);
-      // return cart;
+let cart = [];
+
+const getAddedEclairs = () => {
+  event.preventDefault();
+  cartList.innerHTML="";
+  console.log('cart: ', cart);
+
+  if (cart.length === 0) {
+    cartList.innerHTML="Пока ничего не выбрано :(";
+    return;
+  }
+
+  for (const eclair of ECLAIRS) {
+    for (let i = 0; i < cart.length; i++) {
+      if (eclair.id == cart[i].id) {
+        createCartCards(eclair);
+      }
     }
   }
-} 
+};
+
+const addToCart = () => {
+  cart = [];
+  localStorage.clear();
+  
+  for (let i=0; i < checkboxesChecked.length; i++) {
+    if(checkboxesChecked[i].checked) {
+      cart.push({"id":checkboxesChecked[i].dataset.id, "price":checkboxesChecked[i].dataset.price})
+      localStorage.setItem("id", JSON.stringify(cart));
+    }
+  }
+  // console.log('localStorage: ', localStorage);
+  return cart;
+}
 
 swiperWrapperContainer.addEventListener("change", editCheckboxChecked);
 swiperWrapperContainer.addEventListener("change", addToCart);
 
+const buyBtn = document.querySelector('.button__buy');
+buyBtn.addEventListener("click", getAddedEclairs)
