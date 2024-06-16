@@ -8,7 +8,8 @@
       "./img/five_eclairs_assorted.jpg"
     ],
     "description": "лесные ягоды и глазурь",
-    "isBestSeller": false
+    "isBestSeller": false,
+    "count": 1 
   },
   {
     "category": "sweet",
@@ -19,7 +20,8 @@
       "./img/five_eclairs_box.jpg"
     ],
     "description": "Ассорти ягод и глазури",
-    "isBestSeller": false
+    "isBestSeller": false,
+    "count": 1 
   },
   {
     "category": "sweet",
@@ -30,7 +32,8 @@
       "./img/three_eclairs_flowers.jpg"
     ],
     "description": "Фруктовое ассорти",
-    "isBestSeller": false
+    "isBestSeller": false,
+    "count": 1 
   },
   {
     "category": "sweet",
@@ -41,7 +44,8 @@
       "./img/raspberries_eclair.jpg"
     ],
     "description": "Малина со сливками",
-    "isBestSeller": false
+    "isBestSeller": false,
+    "count": 1 
   },
   {
     "category": "sweet",
@@ -52,7 +56,8 @@
       "./img/strawberry_eclair.jpg"
     ],
     "description": "Клубника со сливками",
-    "isBestSeller": false
+    "isBestSeller": false,
+    "count": 1 
   },
   {
     "category": "sweet",
@@ -65,7 +70,8 @@
       "./img/lime_eclairs-orig.jpg"
     ],
     "description": "Лайм и шоколад",
-    "isBestSeller": true
+    "isBestSeller": true,
+    "count": 1 
   },
   {
     "category": "sweet",
@@ -78,7 +84,8 @@
       "./img/peanut_orig.jpg"
     ],
     "description": "Арахис и карамель, фундук",
-    "isBestSeller": true
+    "isBestSeller": true,
+    "count": 1 
   },
   {
     "category": "sweet",
@@ -91,6 +98,7 @@
       "./img/coconut_orig.jpg"
     ],
     "description": "Кокос и белый шоколад",
-    "isBestSeller": true
+    "isBestSeller": true,
+    "count": 1 
   }
 ]

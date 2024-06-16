@@ -1,8 +1,4 @@
 export const createBestsellersList = () => {
-  // const bestsellersListContainer = document.querySelector(
-  //   ".bestsellers__list__container"
-  // );
-
   const bestsellersInfoContainer = document.querySelector(".bestsellers__info");
 
   const bestsellersList = document.createElement("ul");

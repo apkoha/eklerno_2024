@@ -1264,6 +1264,12 @@ iframe {
   height: 33px;
 }
 
+.cart__price-text {
+  font-weight: 600;
+  font-size: 14px;
+  color: #111111;
+}
+
 .cart__count {
   display: flex;
   align-items: center;

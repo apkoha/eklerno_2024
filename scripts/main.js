@@ -125,12 +125,12 @@ const createCartCards = (eclair) => {
       />
       <h3 class="cart__item-title">${eclair.title}</h3>
       <div class="cart__item__price">
-        <p class="products__price-text">${eclair.price} ₽</p>
+        <p class="cart__price-text">${eclair.price} ₽</p>
       </div>
       <div class="cart__count">
-        <button class="count__minus-btn count__btn">-</button>
-        <div class="cart__count-container">1</div>
-        <button class="count__plus-btn count__btn">+</button>
+        <button class="count__minus-btn count__btn" data-id="${eclair.id}">-</button>
+        <div class="cart__count-container">${eclair.count}</div>
+        <button class="count__plus-btn count__btn" data-id="${eclair.id}">+</button>
       </div>
     </div>
   `;
@@ -138,15 +138,18 @@ const createCartCards = (eclair) => {
   cartList.append(cartItem);
 };
 
+//объявление "Корзины"
 let cart = [];
 
+const cartTitle = document.querySelector(".cart-popup__title");
+
+//отрисовка "Корзины"
 const getAddedEclairs = () => {
   event.preventDefault();
   cartList.innerHTML="";
-  console.log('cart: ', cart);
 
   if (cart.length === 0) {
-    cartList.innerHTML="Пока ничего не выбрано :(";
+    cartTitle.innerText="Пока ничего не выбрано :(";
     return;
   }
 
@@ -154,27 +157,95 @@ const getAddedEclairs = () => {
     for (let i = 0; i < cart.length; i++) {
       if (eclair.id == cart[i].id) {
         createCartCards(eclair);
+        calcCartPrice();
       }
     }
   }
 };
 
+//добавление в "Корзину"
 const addToCart = () => {
   cart = [];
   localStorage.clear();
   
   for (let i=0; i < checkboxesChecked.length; i++) {
     if(checkboxesChecked[i].checked) {
-      cart.push({"id":checkboxesChecked[i].dataset.id, "price":checkboxesChecked[i].dataset.price})
-      localStorage.setItem("id", JSON.stringify(cart));
+      cart.push({"id":checkboxesChecked[i].dataset.id, "price":checkboxesChecked[i].dataset.price, "count":checkboxesChecked[i].dataset.count})
+      //выше лишнее
+      // localStorage.setItem("cartItems", JSON.stringify(cart));
     }
   }
-  // console.log('localStorage: ', localStorage);
-  return cart;
+  // const saveCard = JSON.parse(localStorage.getItem("cartItems"));
 }
 
+//отслеживание кликов на чекбоксах свайпера с эклерами
 swiperWrapperContainer.addEventListener("change", editCheckboxChecked);
 swiperWrapperContainer.addEventListener("change", addToCart);
 
+//добавление эклера в корзину по клику на кнопку "купить"
 const buyBtn = document.querySelector('.button__buy');
 buyBtn.addEventListener("click", getAddedEclairs)
+
+//значние и отрисовка первоначальной суммы товаров
+const sumValueContainer = document.querySelector(".cart__sum-value");
+let sumValue = 0;
+sumValueContainer.innerText = sumValue;
+
+
+// https://youtu.be/pIgyoL5FjgI
+const changelAmount = () => {
+ const target = event.target;
+ event.preventDefault();
+ let counter;
+
+ if (target.classList.contains("count__plus-btn") || target.classList.contains("count__minus-btn")) {
+   const counterItemContainer = target.closest(".cart__count") 
+   counter = counterItemContainer.querySelector(".cart__count-container");
+ };
+
+ if (target.classList.contains("count__plus-btn")) {
+  console.log("нажал на плюс");
+  counter.innerText = ++counter.innerText;
+ }
+
+ if (target.classList.contains("count__minus-btn")) {
+  console.log("нажал на минус");
+ 
+  if (parseInt(counter.innerText) > 1) {
+    counter.innerText = --counter.innerText;
+    } else if (target.closest(".cart-popup__list") && parseInt(counter.innerText) === 1) {
+      target.closest(".cart-popup__item").remove();
+      toggleCartStatus();
+      calcCartPrice();
+    }
+  }
+
+  if (target.classList.contains("count__btn") && target.closest(".cart-popup__list")) {
+    calcCartPrice();
+  }
+}
+
+cartList.addEventListener("click", changelAmount);
+
+//при удалении всех товаров в корзине выводит надпись.
+const toggleCartStatus = () => {
+  if (cartList.children.length === 0) {
+    cartTitle.innerText = "Корзина пуста";
+  }
+}
+
+const calcCartPrice = () => {
+  const cartItems = document.querySelectorAll(".cart-popup__item");
+  const totalPriceEl = document.querySelector(".cart__sum-value");
+
+  let totalPrice = 0;
+
+  cartItems.forEach( function (item) {
+    const amountEl = item.querySelector(".cart__count-container")
+    const priceEl = item.querySelector(".cart__price-text")
+    const currenPrice = parseInt(amountEl.innerText) * parseInt(priceEl.innerText)
+    totalPrice += currenPrice;
+  })
+
+  totalPriceEl.innerText = totalPrice;
+}
