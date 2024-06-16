@@ -631,23 +631,27 @@ iframe {
   color: #111111;
 }
 
-.compound__item:first-child .card__front {
-  background-color: #fd9222;
-  color: #fff;
-}
-
-.compound__item:nth-child(3) .card__front {
-  border: 1px solid transparent;
-  background-color: #1e1823;
-  color: #fff;
-}
-
 .compound__item-text {
   font-weight: 600;
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.02em;
   text-transform: uppercase;
+  color: #111;
+}
+
+.compound__item:first-child .card__front {
+  background-color: #fd9222;
+}
+
+.compound__item:nth-child(3) .card__front {
+  border: 1px solid transparent;
+  background-color: #1e1823;
+}
+
+.compound__item:first-child .compound__item-text,
+.compound__item:nth-child(3) .compound__item-text {
+  color: #fff;
 }
 
 .made {
@@ -1197,7 +1201,8 @@ iframe {
   padding: 48px;
 }
 
-.cart-popup__title {
+.cart-popup__title,
+.cart-popup__text {
   margin-bottom: 32px;
   font-weight: 600;
   font-size: 24px;
@@ -1300,6 +1305,19 @@ iframe {
   display: flex;
   gap: 16px;
   margin-bottom: 18px;
+}
+
+.cart__sum-text,
+.cart__sum-container {
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 117%;
+  letter-spacing: -0.03em;
+  color: #fd9222;
+}
+
+.cart__sum-container {
+  color: #111;
 }
 
 .form__fieldset {
@@ -1778,7 +1796,8 @@ iframe {
     width: 420px;
   }
 
-  .cart-popup__title {
+  .cart-popup__title,
+  .cart-popup__text {
     font-size: 20px;
     line-height: 120%;
   }

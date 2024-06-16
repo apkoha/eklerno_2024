@@ -32,7 +32,7 @@ const createSwiperProductCard = (eclair) => {
 
   swiperSlideContainer.append(productContainer);
 
-  // создание блока пагинации (буллетов)
+  //создание блока пагинации (буллетов)
   const productsSlider = document.querySelector(".products__slider");
   const swiperPaginationContainer = document.createElement("div");
   swiperPaginationContainer.classList.add("swiper-pagination");
@@ -40,7 +40,7 @@ const createSwiperProductCard = (eclair) => {
   productsSlider.append(swiperPaginationContainer);
 };
 
-//для каждого элемента массива ECLAIRS выполни функцию createSwiperProductCard
+//отрисовка каждого элемента массива ECLAIRS функцией createSwiperProductCard
 export const getEclairsData = (ECLAIRS) => {
   for (const eclair of ECLAIRS) {
     createSwiperProductCard(eclair);

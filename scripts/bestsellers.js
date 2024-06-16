@@ -1,3 +1,7 @@
+import ECLAIRS from "../eclairs.json" with { type: "json" };
+import { calcCartPrice, cartList, createCartCards, emptyCartText } from "./cart.js";
+
+//создание элемента ul для карточек "хитов продаж"
 export const createBestsellersList = () => {
   const bestsellersInfoContainer = document.querySelector(".bestsellers__info");
 
@@ -6,6 +10,7 @@ export const createBestsellersList = () => {
   bestsellersInfoContainer.before(bestsellersList);
 };
 
+//шаблон карточки "хитов продаж", элемент li
 const createBestsellersCard = (bestEclair) => {
   const bestsellersList = document.querySelector(".bestsellers__list");
 
@@ -22,10 +27,24 @@ const createBestsellersCard = (bestEclair) => {
   bestsellersList.append(bestsellersItem);
 };
 
+//отрисовка товаров из массива ECLAIRS со свойством isBestSeller
 export const getBestEclairs = (ECLAIRS) => {
   for (const bestEclair of ECLAIRS) {
-    if (bestEclair.isBestSeller === true) {
+    if (bestEclair.isBestSeller) {
       createBestsellersCard(bestEclair);
+    }
+  }
+};
+
+//добавление "хитов продаж" в корзину с предварительной очисткой и подсчётом суммы
+export const buyBestEclairs = () => {
+  emptyCartText.innerText = "";
+  cartList.innerHTML= "";
+
+  for (const bestEclair of ECLAIRS) {
+    if (bestEclair.isBestSeller) {
+      createCartCards(bestEclair);
+      calcCartPrice();
     }
   }
 };
