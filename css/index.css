@@ -677,7 +677,7 @@ iframe {
   position: relative;
   border-radius: 15px;
   min-width: 600px;
-  height: 400px;
+  min-height: 400px;
   background-size: cover;
   background-image: url("../img/cooking-cover.jpg");
   background-color: #302e2e;
@@ -748,6 +748,12 @@ iframe {
   margin-bottom: 62px;
 }
 
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  height: auto;
+}
+
 .products__slider {
   margin-bottom: 24px;
 }
@@ -775,7 +781,9 @@ iframe {
 .products__item {
   display: flex;
   flex-direction: column;
+  justify-content: start;
   align-items: center;
+  flex-grow: 1;
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 15px;
   width: 270px;
@@ -789,12 +797,16 @@ iframe {
 }
 
 .products__item-title {
+  margin-bottom: 2px;
+  padding: 0 10px;
   font-weight: 600;
   font-size: 18px;
   line-height: 133%;
   letter-spacing: -0.02em;
   text-transform: uppercase;
+  text-align: center;
   color: #111111;
+  word-wrap: break-word;
 }
 
 .products__item-text {
@@ -817,6 +829,7 @@ iframe {
   min-width: 100px;
   height: 33px;
   margin-bottom: 8px;
+  margin-top: auto;
 }
 
 .products__price-text {
@@ -928,6 +941,7 @@ iframe {
 }
 
 .review__info-container {
+  flex-grow: 1;
   border: 1px solid rgba(17, 17, 17, 0.1);
   border-radius: 15px;
   width: 360px;
@@ -1179,10 +1193,6 @@ iframe {
   right: 12px;
 }
 
-/* .show__popup {
-  display: block;
-} */
-
 /* стили для popup корзины */
 /* фиксированная высота нужна, чтобы работал скролл при переполнении */
 .cart__popup {
@@ -1199,6 +1209,7 @@ iframe {
   border-radius: 15px;
   background-color: #fafafa;
   overflow: auto;
+  box-shadow: 0 9px 27px 0 #5f5f5f;
 }
 
 .cart-popup__form {
@@ -1246,7 +1257,6 @@ iframe {
   flex-direction: column;
   justify-content: space-between;
   align-items: center;
-  flex-grow: 1;
 }
 
 .cart-popup__img {
@@ -1460,6 +1470,7 @@ iframe {
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none;
+  margin-top: auto;
 }
 
 .checkbox.style-h input {

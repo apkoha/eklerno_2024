@@ -37,16 +37,12 @@ let cart = [];
 //добавление в "Корзину"
 export const addToCart = () => {
   cart = [];
-  // localStorage.clear();
-  
+    
   for (let i=0; i < checkboxesChecked.length; i++) {
     if(checkboxesChecked[i].checked) {
-      cart.push({"id":checkboxesChecked[i].dataset.id, "price":checkboxesChecked[i].dataset.price, "count":checkboxesChecked[i].dataset.count})
-      //выше лишнее
-      // localStorage.setItem("cartItems", JSON.stringify(cart));
+      cart.push({"id":checkboxesChecked[i].dataset.id})
     }
   }
-  // const saveCard = JSON.parse(localStorage.getItem("cartItems"));
 }
 
 //отрисовка "Корзины"
