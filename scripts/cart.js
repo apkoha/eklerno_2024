@@ -53,6 +53,7 @@ export const addToCart = () => {
 export const getAddedEclairs = () => {
   event.preventDefault();
   cartList.innerHTML = "";
+  emptyCartText.innerText = "";
 
   if (cart.length === 0) {
     emptyCartText.innerText = "Пока ничего не выбрано :(";

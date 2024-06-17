@@ -154,7 +154,7 @@ iframe {
   border: 1px solid transparent;
   background-color: #fd9222;
   border-radius: 100px;
-  padding: 14px 40px;
+  padding: 14px 20px;
   min-width: 144px;
   min-height: 45px;
   font-weight: 600;
@@ -367,6 +367,7 @@ iframe {
   justify-content: center;
   align-items: center;
   outline: none;
+  text-align: center;
 }
 
 .hero__link-how {
@@ -595,7 +596,7 @@ iframe {
 .card__back {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   padding: 20px;
   border: 1px solid #fd9222;
   border-radius: 15px;
@@ -735,6 +736,7 @@ iframe {
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.02em;
+  color: #111;
 }
 
 .products {
@@ -743,7 +745,7 @@ iframe {
 
 /* стили слайдера блока с продуктами */
 .swiper-wrapper {
-  margin-bottom: 52px;
+  margin-bottom: 62px;
 }
 
 .products__slider {
@@ -865,7 +867,8 @@ iframe {
 
 .bestsellers__info {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-evenly;
+  align-items: center;
 }
 
 .bestsellers__text {
@@ -874,6 +877,7 @@ iframe {
   font-size: 14px;
   line-height: 129%;
   letter-spacing: -0.02em;
+  color: #111;
 }
 
 .bestsellers__button {
@@ -957,9 +961,10 @@ iframe {
   margin: 0 auto;
   border: 1px solid #fd9222;
   border-radius: 100px;
-  padding: 14px 40px;
-  max-width: 222px;
+  padding: 14px 20px;
+  width: 222px;
   min-height: 50px;
+  color: #111;
 }
 
 .review__link:hover,
@@ -973,7 +978,6 @@ iframe {
 }
 
 .subscribe {
-  width: 100%;
   background-size: cover;
   background-image: url(../img/subscribe-cover.jpg);
   background-color: #636363;
@@ -1030,6 +1034,7 @@ iframe {
   font-size: 28px;
   line-height: 121%;
   letter-spacing: -0.02em;
+  margin-right: 12px;
 }
 
 .footer__contacts {
@@ -1174,23 +1179,26 @@ iframe {
   right: 12px;
 }
 
-.show__popup {
+/* .show__popup {
   display: block;
-}
+} */
 
 /* стили для popup корзины */
+/* фиксированная высота нужна, чтобы работал скролл при переполнении */
 .cart__popup {
-  /* display: none; */
-  /* position: fixed;
+  visibility: hidden;
+  opacity: 0;
+  position: fixed;
   top: 50%;
-  left: 50%; */
+  left: 50%;
   margin: 0 auto;
   width: 610px;
-  min-height: 860px;
-  /* transform: translateX(-50%) translateY(-50%); */
-  /* z-index: 6; */
+  height: 860px;
+  transform: translateX(-50%) translateY(-50%);
+  z-index: 6;
   border-radius: 15px;
   background-color: #fafafa;
+  overflow: auto;
 }
 
 .cart-popup__form {
@@ -1294,10 +1302,11 @@ iframe {
 }
 
 .cart__count-container {
+  min-width: 32px;
   padding: 4px;
   background-color: #fff;
   border: 1px solid rgba(17, 17, 17, 0.1);
-  color: #000;
+  color: #111;
   text-align: center;
 }
 
@@ -1586,8 +1595,9 @@ iframe {
 
   .header__close-button--active {
     display: block;
-    right: 32px;
-    top: 24px;
+    margin-left: auto;
+    margin-bottom: 88px;
+    position: relative;
   }
 
   .header__nav_container {
@@ -1600,13 +1610,13 @@ iframe {
     position: absolute;
     top: -24px;
     right: 0;
+    flex-direction: column;
     margin: 0 auto;
     padding: 24px 32px;
     z-index: 6;
     width: 290px;
     height: 95vh;
     background-color: #1e1823;
-    align-items: start;
   }
 
   .header__nav_active {
@@ -1614,21 +1624,22 @@ iframe {
     opacity: 1;
     transition: opacity 300ms ease-in-out;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: flex-start;
+    gap: 0;
   }
 
   .nav__list {
     flex-direction: column;
-    margin-top: 156px;
-    margin-left: 53px;
   }
 
   .nav__list-item {
     color: #fff;
   }
 
-  .header__social-link {
+  .header__social-links {
     color: #fff;
+    margin-top: auto;
+    margin-right: auto;
   }
 
   .hero {
@@ -1644,6 +1655,7 @@ iframe {
   .quality,
   .bestsellers,
   .compound,
+  .products,
   .review {
     margin-bottom: 100px;
   }
@@ -1688,10 +1700,6 @@ iframe {
 
   .products__slider {
     max-width: 558px;
-  }
-
-  .bestsellers__list {
-    justify-content: space-around;
   }
 
   .bestsellers__item {
@@ -1984,6 +1992,10 @@ iframe {
     width: 336px;
   }
 
+  .review__link {
+    width: 180px;
+  }
+
   .slider-item__container {
     width: 336px;
   }
@@ -2046,11 +2058,12 @@ iframe {
 
   .cart__popup {
     width: 312px;
+    height: 100vh;
   }
 
-  /* .cart-popup__item {
-    min-width: 264px;
-  } */
+  .cart-popup__container {
+    padding: 10px 20px;
+  }
 
   .form__fieldset_input::placeholder {
     font-weight: 400;
