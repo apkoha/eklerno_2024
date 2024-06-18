@@ -1,42 +1,42 @@
 [
   {
-    "accountName": "Кристина Нежнина",
-    "text": "I love this chocolate bar. Perfect combination of light crispy wafer, covered in a thin layer chocolate.",
+    "accountName": "Регина Нежнина",
+    "text": "Обожаю эти эклеры. Идеальное сочетание крема и&nbsp;заварного теста, покрытого тонким слоем шоколада.",
     "profilePhoto": [
       "./img/buyer-ginger-girl.jpg"
     ]
   },
     {
     "accountName": "Иван Демьян",
-    "text": "This chocolate confection is a delight! A delight! The wafer is light and crisp, the hazelnut cream is smooth, and the chocolate is good.",
+    "text": "Это воздушное лакомство просто восторг! Восторг! Тесто пышное и&nbsp;хрустящее, нежный сливочный крем, великолепный шоколад.",
     "profilePhoto": [ 
       "./img/buyer-man.jpg"
     ]
   },
     {
     "accountName": "Ульяна Лавинова",
-    "text": "Chocolate is a family favourite treat. Love the delicious smooth chocolate and the creaminess inside. The wafer is soft but crunchy.",
+    "text": "Эклеры&nbsp;&mdash; любимое лакомство всей семьи. Обожаю вкусный нежный шоколад и&nbsp;кремовую текстуру внутри. Сочные ягоды&nbsp;&mdash; как изысканное дополнение.",
     "profilePhoto": [
       "./img/buyer-girl.jpg"
     ]
   },
     {
     "accountName": "Константин Губенков",
-    "text": "This is delicious. It so rich and flavorful you don’t need to use as many. I love topping an apple with almond butter and these chips for a snack.",
+    "text": "Это восхитительно! Они&nbsp;настолько насыщенные и&nbsp;ароматные, что вам не&nbsp;нужно много, чтобы насладиться сполна. Я&nbsp;люблю утром съесть парочку под&nbsp;чашку горячего капучино.",
     "profilePhoto": [
       "./img/buyer-young-blood.jpg"
     ]
   },
   {
   "accountName": "Наталья Соколова",
-  "text": "The chocolate assortment was delicious. Both dark and milk chocolate pieces were smooth and just right on the sweetness level. ",
+  "text": "Ассортимент эклеров впечатляет. Отличные сочетания глазури, ягод и&nbsp;топпингов, удовлетворят любого требовательного гурмана.",
   "profilePhoto": [
     "./img/buyer-young-girl.jpg"
   ]
 },
     {
     "accountName": "Даниил Безсонов",
-    "text": "This is delicious. It so rich and flavorful you don’t need to use as many. I love topping an apple with almond butter and these chips for a snack.",
+    "text": "Это просто лучшие эклеры в&nbsp;мире! И&nbsp;я&nbsp;очень рад поддержать такого производителя! Лучшие домашние эклеры мирового уровня :)",
     "profilePhoto": [
       "./img/buyer-frizman.jpg"
     ]

@@ -863,7 +863,7 @@ iframe {
 .bestsellers__list {
   display: flex;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: space-around;
   gap: 16px;
   margin-bottom: 32px;
 }
@@ -880,8 +880,8 @@ iframe {
 
 .bestsellers__info {
   display: flex;
-  justify-content: space-evenly;
-  align-items: center;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .bestsellers__text {
@@ -2069,7 +2069,7 @@ iframe {
 
   .cart__popup {
     width: 312px;
-    height: 100vh;
+    height: 95vh;
   }
 
   .cart-popup__container {

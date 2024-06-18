@@ -7,7 +7,7 @@
     "urlToImages": [
       "./img/five_eclairs_assorted.jpg"
     ],
-    "description": "лесные ягоды и глазурь",
+    "description": "Ягоды и глазурь",
     "isBestSeller": false,
     "count": 1 
   },
@@ -26,7 +26,7 @@
   {
     "category": "sweet",
     "id": 3,
-    "title": "сет Инжирный",
+    "title": "сет Звездная ночь",
     "price": 1050,
     "urlToImages": [
       "./img/three_eclairs_flowers.jpg"
@@ -77,7 +77,7 @@
     "category": "sweet",
     "id": 7,
     "title": "Ореховый",
-    "price": 400,
+    "price": 350,
     "weight": 75,
     "urlToImages": [
       "./img/peanut_eclairs.jpg",
@@ -90,7 +90,7 @@
   {
     "category": "sweet",
     "id": 8,
-    "title": "кокосовый",
+    "title": "Кокосовый",
     "price": 350,
     "weight": 75,
     "urlToImages": [
