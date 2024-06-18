@@ -53,6 +53,7 @@ export const getAddedEclairs = () => {
 
   if (cart.length === 0) {
     emptyCartText.innerText = "Пока ничего не выбрано :(";
+    calcCartPrice();
     return;
   }
 
